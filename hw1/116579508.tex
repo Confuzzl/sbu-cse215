@@ -1,0 +1,460 @@
+\documentclass[letterpaper]{article}
+
+\usepackage{enumerate}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[letterpaper, margin=1in]{geometry}
+
+\begin{document}
+	\begin{enumerate} 
+		\item [] \textbf{Problem 1.}
+		\begin{enumerate}
+			\item Set 2.1 
+			\begin{itemize}
+				\item [13.] 
+				$\neg \left( p \wedge q \right) \vee \left( p \vee q \right)$ \\
+				$\begin{array}{c|c|c|c|c}
+					p & q & \neg \left( p \wedge q \right) & \left( p \vee q \right) & \neg \left( p \wedge q \right) \vee \left( p \vee q \right) \\ \hline
+					F & F & T & F & T \\ \hline
+					F & T & T & T & T \\ \hline
+					T & F & T & T & T \\ \hline
+					T & T & F & T & T \\ 
+				\end{array}$
+				\item [17.]
+				$\neg \left( p \wedge q \right) \stackrel{?}{\equiv} \neg p \wedge \neg q$ \\
+				$\begin{array}{c|c|c|c}
+					p & q & \neg \left( p \wedge q \right) & \neg p \wedge \neg q \\ \hline
+					F & F & T & T \\ \hline
+					F & T & T & F \\ \hline
+					T & F & T & F \\ \hline
+					T & T & F & F \\ 
+				\end{array}$ \\
+				$\neg \left( p \wedge q \right) \not\equiv \neg p \wedge \neg q$ because they do not have identical truth values for all possible substitutions.
+			\end{itemize}
+			
+			\item Set 2.1 
+			\begin{itemize}
+				\item [22.]
+				$p \wedge  \left( q \vee r \right) \stackrel{?}{\equiv} \left( p \wedge q \right) \vee \left( p \wedge r \right)$ \\
+				$\begin{array}{c|c|c|c|c}
+					p & q & r & p \wedge  \left( q \vee r \right) & \left( p \wedge q \right) \vee \left( p \wedge r \right) \\ \hline
+					F & F & F & F & F \\ \hline
+					F & F & T & F & F \\ \hline
+					F & T & F & F & F \\ \hline
+					F & T & T & F & F \\ \hline
+					T & F & F & F & F \\ \hline
+					T & F & T & T & T \\ \hline
+					T & T & F & T & T \\ \hline
+					T & T & T & T & T \\ 
+				\end{array}$ \\
+				$p \wedge \left( q \vee r \right) \equiv \left( p \wedge q \right) \vee \left( p \wedge r \right)$ because they have identical truth values for all possible substitutions.
+				\item [24.]
+				$\left( p \vee q \right) \vee \left( p \wedge r \right) \stackrel{?}{\equiv} \left( p \vee q \right) \wedge r$ \\
+				$\begin{array}{c|c|c|c|c}
+					p & q & r & \left( p \vee q \right) \vee \left( p \wedge r \right) & \left( p \vee q \right) \wedge r \\ \hline
+					F & F & F & F & F \\ \hline
+					F & F & T & F & F \\ \hline
+					F & T & F & T & F \\ \hline
+					F & T & T & T & T \\ \hline
+					T & F & F & T & F \\ \hline
+					T & F & T & T & T \\ \hline
+					T & T & F & T & F \\ \hline
+					T & T & T & T & T \\ 
+				\end{array}$ \\
+				$\left( p \vee q \right) \vee \left( p \wedge r \right) \not\equiv \left( p \vee q \right) \wedge r$ because they do not have identical truth values for all possible substitutions.
+			\end{itemize}
+		
+			\item Set 2.1
+			\begin{itemize}
+				\item [42.]
+				$\left( \left( \neg p \wedge q \right) \wedge \left( q \wedge r \right) \right) \wedge \neg q$ \\
+				$\begin{array}{c|c|c|c|c|c|c}
+					p & q & r & \neg p \wedge q & q \wedge r & \left( \neg p \wedge q \right) \wedge \left( q \wedge r \right) & \left( \left( \neg p \wedge q \right) \wedge \left( q \wedge r \right) \right) \wedge \neg q \\ \hline
+					F & F & F & F & F & F & F \\ \hline
+					F & F & T & F & F & F & F \\ \hline
+					F & T & F & T & F & F & F \\ \hline
+					F & T & T & T & T & T & F \\ \hline
+					T & F & F & F & F & F & F \\ \hline
+					T & F & T & F & F & F & F \\ \hline
+					T & T & F & F & F & F & F \\ \hline
+					T & T & T & F & T & F & F \\ 
+				\end{array}$ \\
+				Contradiction.
+				
+				\item [43.]
+				$\left( \neg p \vee q \right) \vee \left( p \wedge \neg q \right)$ \\
+				$\begin{array}{c|c|c|c|c|c}
+					p & q & r & \neg p \vee q & p \wedge \neg q & \left( \neg p \vee q \right) \vee \left( p \wedge \neg q \right) \\ \hline
+					F & F & F & T & F & T  \\ \hline
+					F & F & T & T & F & T  \\ \hline
+					F & T & F & T & F & T  \\ \hline
+					F & T & T & T & T & T  \\ \hline
+					T & F & F & F & T & T  \\ \hline
+					T & F & T & F & T & T  \\ \hline
+					T & T & F & T & F & T  \\ \hline
+					T & T & T & T & T & T  \\ 
+				\end{array}$ \\
+				Tautology.
+			\end{itemize}
+			
+			\item Set 2.1
+			\begin{itemize}
+				\item [46.] \quad
+				\begin{enumerate}[(a)]
+					\item 
+					\begin{flalign*}
+						p \oplus p & \equiv \left( p \vee p \right) \wedge \neg \left( p \wedge p \right) &\\
+						& \equiv T \wedge \neg T &\\
+						& \equiv F &
+					\end{flalign*}
+					\begin{flalign*}
+						\left( p \oplus p \right) \oplus p & \equiv F \oplus p &\\
+						& \equiv \left( F \vee p \right) \wedge \neg \left( F \wedge p \right) &\\
+						& \equiv p \wedge T &\\
+						& \equiv p &
+					\end{flalign*}
+					
+					\item
+					$\left( p \oplus q \right) \oplus r \stackrel{?}{\equiv} p \oplus \left( q \oplus r \right)$ \\
+					$\begin{array}{c|c|c|c|c|c|c}
+						p & q & r & p \oplus q & \left( p \oplus q \right) \oplus r & q \oplus r & p \oplus \left( q \oplus r \right) \\ \hline
+						F & F & F & F & F & F & F \\ \hline
+						F & F & T & F & T & T & T \\ \hline
+						F & T & F & T & T & T & T \\ \hline
+						F & T & T & T & F & T & F \\ \hline
+						T & F & F & T & T & F & T \\ \hline
+						T & F & T & T & F & T & F \\ \hline
+						T & T & F & F & F & T & F \\ \hline
+						T & T & T & F & T & F & T \\ 
+					\end{array}$ \\
+					$\left( p \oplus q \right) \oplus r \equiv p \oplus \left( q \oplus r \right)$ because they have identical truth values for all possible substitutions.
+					
+				\end{enumerate}
+			\end{itemize}
+			
+			\item Set 2.2
+			\begin{itemize}
+				\item [6.]
+				$\left( p \vee q \right) \vee \left( \neg p \wedge q \right) \rightarrow q$ \\
+				$\begin{array}{c|c|c|c|c|c}
+					p & q & p \vee q & \neg p \wedge q & \left( p \vee q \right) \vee \left( \neg p \wedge q \right) &\left( p \vee q \right) \vee \left( \neg p \wedge q \right) \rightarrow q \\ \hline
+					F & F & F & F & F & T \\ \hline
+					F & T & T & F & T & T \\ \hline
+					T & F & T & T & T & F \\ \hline
+					T & T & T & F & T & T \\
+				\end{array}$ \\
+				
+				\item [8.]
+				$\neg p \vee q \rightarrow r$ \\
+				$\begin{array}{c|c|c|c|c}
+					p & q & r & \neg p \vee q & \neg p \vee q \rightarrow r \\ \hline
+					F & F & F & T & F \\ \hline
+					F & F & T & T & T \\ \hline
+					F & T & F & T & F \\ \hline
+					F & T & T & T & T \\ \hline
+					T & F & F & F & T \\ \hline
+					T & F & T & F & T \\ \hline
+					T & T & F & T & F \\ \hline
+					T & T & T & T & T \\ 
+				\end{array}$ \\
+			
+				\item [13.] \quad
+				\begin{enumerate}[(a)]
+					\item
+					$p \rightarrow q \equiv \neg p \vee q$ \\
+					$\begin{array}{c|c|c|c}
+						p & q & p \rightarrow q & \neg p \vee q \\ \hline
+						F & F & T & T \\ \hline
+						F & T & T & T \\ \hline
+						T & F & F & F \\ \hline
+						T & T & T & T \\
+					\end{array}$ \\
+					They have identical truth values for all possible substitutions.
+					
+					\item
+					$\neg \left( p \rightarrow q \right) \equiv p \wedge \neg q$ \\ $\begin{array}{c|c|c|c}
+						p & q & \neg \left( p \rightarrow q \right) & p \wedge \neg q \\ \hline
+						F & F & F & F \\ \hline
+						F & T & F & F \\ \hline
+						T & F & T & T \\ \hline
+						T & T & F & F \\
+					\end{array}$ \\
+					They have identical truth values for all possible substitutions.
+				\end{enumerate}				
+			\end{itemize}
+		
+			\item Set 2.2
+			\begin{itemize}
+				\item [10.]
+				$\left( p \rightarrow r \right) \leftrightarrow \left( q \rightarrow r \right)$ \\
+				$\begin{array}{c|c|c|c|c|c}
+					p & q & r & p \rightarrow r & q \rightarrow r & \left( p \rightarrow r \right) \leftrightarrow \left( q \rightarrow r \right) \\ \hline
+					F & F & F & T & T & T \\ \hline
+					F & F & T & T & T & T \\ \hline
+					F & T & F & T & F & F \\ \hline
+					F & T & T & T & T & T \\ \hline
+					T & F & F & F & T & F \\ \hline
+					T & F & T & T & T & T \\ \hline
+					T & T & F & F & F & T \\ \hline
+					T & T & T & T & T & T \\ 
+				\end{array}$
+				
+				\item [11.]
+				$\left( p \rightarrow \left( q \rightarrow r \right) \right) \leftrightarrow \left( \left( p \wedge q \right) \rightarrow r \right)$ \\
+				$\begin{array}{c|c|c|c|c|c|c|c}
+					p & q & r & q \rightarrow r & p \rightarrow \left( q \rightarrow r \right) & p \wedge q & \left( p \wedge q \right) \rightarrow r & \left( p \rightarrow \left( q \rightarrow r \right) \right) \leftrightarrow \left( \left( p \wedge q \right) \rightarrow r \right) \\ \hline
+					F & F & F & T & T & F & T & T \\ \hline
+					F & F & T & T & T & F & T & T \\ \hline
+					F & T & F & F & T & F & T & T \\ \hline
+					F & T & T & T & T & F & T & T \\ \hline
+					T & F & F & T & T & F & T & T \\ \hline
+					T & F & T & T & T & F & T & T \\ \hline
+					T & T & F & F & F & T & F & T \\ \hline
+					T & T & T & T & T & T & T & T \\ 
+				\end{array}$
+			\end{itemize}
+			
+			\item Set 2.2
+			\begin{itemize}
+				\item [30.]
+				$p \wedge \left( q \vee r \right) \equiv \left( p \wedge q \right) \vee \left( p \wedge r \right)$ \\
+				$p \wedge \left( q \vee r \right) \leftrightarrow \left( p \wedge q \right) \vee \left( p \wedge r \right)$ \\
+				$\begin{array}{c|c|c|c|c|c}
+					p & q & r & p \wedge \left( q \vee r \right) & \left( p \wedge q \right) \vee \left( p \wedge r \right) & p \wedge \left( q \vee r \right) \leftrightarrow \left( p \wedge q \right) \vee \left( p \wedge r \right) \\ \hline
+					F & F & F & F & F & T \\ \hline
+					F & F & T & F & F & T \\ \hline
+					F & T & F & F & F & T \\ \hline
+					F & T & T & F & F & T \\ \hline
+					T & F & F & F & F & T \\ \hline
+					T & F & T & T & T & T \\ \hline
+					T & T & F & T & T & T \\ \hline
+					T & T & T & T & T & T \\ 
+				\end{array}$
+				
+				\item [31.]
+				$p \rightarrow \left( q \rightarrow r \right) \equiv \left( p \wedge q \right) \rightarrow r$ \\
+				$p \rightarrow \left( q \rightarrow r \right) \leftrightarrow \left( p \wedge q \right) \rightarrow r$ \\
+				$\begin{array}{c|c|c|c|c|c|c|c}
+					p & q & r & q \rightarrow r & p \rightarrow \left( q \rightarrow r \right) & p \wedge q & \left( p \wedge q \right) \rightarrow r & p \rightarrow \left( q \rightarrow r \right) \leftrightarrow \left( p \wedge q \right) \rightarrow r \\ \hline
+					F & F & F & T & T & F & T & T \\ \hline
+					F & F & T & T & T & F & T & T \\ \hline
+					F & T & F & F & T & F & T & T \\ \hline
+					F & T & T & T & T & F & T & T \\ \hline
+					T & F & F & T & T & F & T & T \\ \hline
+					T & F & T & T & T & F & T & T \\ \hline
+					T & T & F & F & F & T & F & T \\ \hline
+					T & T & T & T & T & T & T & T \\ 
+				\end{array}$
+			\end{itemize}
+			
+			\item Set 2.2
+			\begin{itemize}
+				\item [25.]
+				A conditional statement is not logically equivalent to its inverse. \\
+				$a \rightarrow b \not\equiv \neg a \rightarrow \neg b$ \\
+				$\begin{array}{c|c|c|c}
+					a & b & a \rightarrow b & \neg a \rightarrow \neg b \\ \hline
+					F & F & T & T \\ \hline
+					F & T & T & F \\ \hline
+					T & F & F & T \\ \hline
+					T & T & T & T \\
+				\end{array}$
+				
+				\item [27.]
+				The converse and inverse of a conditional statement are logically equivalent to each other. \\
+				$b \rightarrow a \equiv \neg a \rightarrow \neg b$ \\
+				$\begin{array}{c|c|c|c}
+					a & b & b \rightarrow a & \neg a \rightarrow \neg b \\ \hline
+					F & F & T & T \\ \hline
+					F & T & F & F \\ \hline
+					T & F & T & T \\ \hline
+					T & T & T & T \\
+				\end{array}$
+			\end{itemize}
+		\end{enumerate}
+	
+		\item [] \textbf{Problem 2.}
+		\begin{enumerate}
+			\item Set 2.1
+			\begin{itemize}
+				\item [26.] Sam isn't an orange belt nor is Kate a red belt.
+				\item [28.] The units digit of $4^{67}$ is not 4 and not 6.
+				\item [29.] This computer program doesn't have a logical error in the first ten lines and it isn't being run with an incomplete data set.
+				\item [30.] The dollar isn't at an all-time high nor is the stock market at a record low.
+				\item [31.] The train isn't late and my watch isn't fast.
+			\end{itemize}
+			
+			\item Set 2.1
+			\begin{itemize}
+				\item [33.] $-10 \geq x \geq 2$
+				\item [35.] $x < -1$ and $x \leq 1$
+				\item [37.] $0 \leq x < -7$
+				\item [39.] 
+				(\textit{num\_orders} $\geq$ 50 or \textit{num\_instock} $\leq$ 300) and \\
+				(50 $>$ \textit{num\_orders} $\geq$ 75 or \textit{num\_instock} $\leq$ 500) \\
+				
+			\end{itemize}
+			
+			\item Set 2.2
+			\begin{itemize}
+				\item [20.] \quad
+				\begin{enumerate}[(a)]
+					\item $P$ is a square and $P$ isn't a rectangle.
+					\item Today is New Year's Eve and tomorrow isn't January.
+					\item The decimal expansion of $r$ is terminating and $r$ isn't rational.
+					\item $n$ is prime and $n$ isn't positive nor 2.
+					\item $x$ is nonnegative and $x$ isn't positive and not 0.
+					\item Tom is Ann's father and Jim isn't her Uncle nor is Sue her aunt.
+					\item $n$ is divisible by 6 and $n$ isn't divisible by 2 nor 3.
+				\end{enumerate}
+			\end{itemize}
+		\end{enumerate}
+		
+		\item [] \textbf{Problem 3.}
+		\begin{enumerate}
+			\item Set 2.2
+			\begin{itemize}
+				\item [33.] If this integer is even, then it equals twice some integer; and if this integer equals twice some integer, then it is even.
+				\item [35.] 
+				If Sam is allowed on Signe's racing boat, then he is an expert sailor. \\
+				If Sam isn't an expert sailor, then he isn't allowed on Signe's racing boat.
+				\item [38.] If it doesn't rain, then Ann will go.
+				\item [39.] If the security code isn't entered, then the door won't open.
+			\end{itemize}
+			
+			\item Set 2.2
+			\begin{itemize}
+				\item [41.] If this triangle has two 45$^\circ$ angles, then it is a right triangle.
+				\item [43.] 
+				If Jim didn't do homework regularly, then he won't pass the course. \\
+				If Jim passes the course, then he did his homework regularly.
+				\item [45.]
+				If this computer program isn't correct, then it produces error messages during translation. \\
+				If this computer program doesn't produce error messages during translation, then it is correct.
+				\item [46.] $X$ is boiling $\rightarrow$ temperature $\geq$ 150$^\circ$C
+				\begin{enumerate}[(a)]
+					\item 
+					temperature $\geq$ 150$^\circ$C $\not\rightarrow$ $X$ is boiling \\
+					Not necessarily true.
+					\item 
+					temperature $<$ 150$^\circ$C $\rightarrow$ $X$ isn't boiling \\
+					Always true.
+					\item
+					$X$ is boiling $\not\leftrightarrow$ temperature $\geq$ 150$^\circ$C \\
+					Not necessarily true.
+					\item
+					$X$ isn't boiling $\rightarrow$ temperature $<$ 150$^\circ$C \\
+					Not necessarily true.
+					\item
+					$X$ is boiling $\not\leftrightarrow$ temperature $\geq$ 150$^\circ$C \\
+					Not necessarily true.
+					\item
+					$X$ is boiling $\rightarrow$ temperature $\geq$ 150$^\circ$C \\
+					Always true.
+				\end{enumerate}
+			\end{itemize}
+		\end{enumerate}
+		
+		\item [] \textbf{Problem 4.}
+		\begin{enumerate}
+			\item Set 2.3
+			\begin{itemize}
+				\item [11.]
+				\begin{flalign}
+					& p \rightarrow q \vee r & \\
+					& \neg q \vee \neg r & \\
+					\therefore{} & \neg p \vee \neg r &
+				\end{flalign}
+				$\begin{array}{c|c|c|c|c|c}	
+					p & q & r & p \rightarrow q \vee r & \neg q \vee \neg r & \neg p \vee \neg r \\ \hline
+					F & F & F & T & T & T \\ \hline
+					F & F & T & T & T & T \\ \hline
+					F & T & F & T & T & T \\ \hline
+					F & T & T & T & F &   \\ \hline
+					T & F & F & F & T &   \\ \hline
+					T & F & T & T & T & T \\ \hline
+					T & T & F & T & T & F \\ \hline
+					T & T & T & T & F &   \\ 
+				\end{array}$ \\
+				Invalid argument because true premises can lead to a false conclusion.
+			\end{itemize}
+		\end{enumerate}
+		
+		\item [] \textbf{Problem 5.}
+		\begin{enumerate}
+			\item Set 2.3
+			\begin{itemize}
+				\item [38.] \quad
+				\begin{itemize}
+					\item [(b)]
+					Another two natives $C$ and $D$ approach you but only $C$ speaks. \\
+					$C$ says: Both of us are knaves. \\
+					What are $C$ and $D$?
+					\begin{flalign*}
+						& \textbf{Suppose $C$ is a knight.} & \\ 
+						\therefore{} & \text{What $C$ says is true} & \text{definition of knight} & \\
+						\therefore{} & \text{$C$ and $D$ are knaves} & \text{what $C$ said} & \\
+						\therefore{} & \text{$C$ is a knave} & \text{specialization} & \\
+						\therefore{} & \text{$C$ is a knight and a knave} \\
+						\therefore{} & \text{The supposition is false} & \text{contradiction} & \\
+						& \textbf{Suppose $C$ is a knave.} & \\
+						\therefore{} & \text{What $C$ says is false} & \text{definition of knave} & \\
+						\therefore{} & \text{$C$ is a knight or $D$ is a knight} & \text{opposite of what $C$ said} & \\
+						\therefore{} & \text{$D$ is a knight} & \text{by elimination} & \\
+						\therefore{} & \text{$C$ is a knave and $D$ is a knight}
+					\end{flalign*}
+					
+					\item [(c)]
+					You then encounter natives $E$ and $F$. \\
+					$E$ says: $F$ is a knave. \\
+					$F$ says: $E$ is a knave. \\
+					How many knaves are there?
+					\begin{flalign*}
+						& \textbf{Suppose $E$ and $F$ are knaves.} & \\ 
+						\therefore{} & F \\
+						\therefore{} & E & \text{contradiction} & \\ 
+						& \textbf{Suppose $E$ is a knave and $F$ is a knight.} & \\ 
+						\therefore{} & F \\
+						\therefore{} & \neg E & \text{1 knight and 1 knave} & \\
+						& \textbf{Suppose $E$ is a knight and $F$ is a knave.} & \\ 
+						\therefore{} & \neg F \\
+						\therefore{} & E & \text{1 knight and 1 knave} & \\
+						& \textbf{Suppose $E$ and $F$ are knights.} & \\ 
+						\therefore{} & \neg F \\
+						\therefore{} & \neg E & \text{contradiction} &
+					\end{flalign*}
+					There is 1 knave.
+				\end{itemize}
+			\end{itemize}
+		\end{enumerate}
+		
+		\item [] \textbf{Problem 6.}
+		\begin{enumerate}
+			\item Set 2.3
+			\begin{itemize}
+				\item [44.]
+				\begin{flalign}
+					& p \rightarrow q & && \\
+					& r \vee s & && \\
+					& \neg s \rightarrow \neg t & && \\
+					& \neg q \vee s & && \\
+					& \neg s & && \\
+					& \neg p \wedge r \rightarrow u & && \\
+					& w \vee t & && \\ \hline
+					\therefore{} & r & \text{elimination by (5) and (8)} && \\
+					\therefore{} & u & \text{specialization and modus ponens by (9) amd (11)} && \\
+					\therefore{} & \neg t & \text{modus ponens by (6) and (8)} && \\
+					\therefore{} & w & \text{elimination by (10) and (11)} && \\ \hline					
+					\therefore{} & u \wedge w & \text{by (12) and (14)} &&
+				\end{flalign}
+			\end{itemize}
+		\end{enumerate}
+		
+		\item [] \textbf{Problem 7.}
+		\begin{enumerate}
+			\item For the circuit corresponding to the following Boolean expression, there is an equivalent circuit with at most two logic gates. Find such a circuit. \\\\
+			Using DeMorgan's Laws to rewrite ands using only nots and ors: \\
+			$\left( \neg P \wedge \neg Q \right) \vee \left( \neg P \wedge Q \right) \vee \left( P \wedge \neg Q \right) \equiv{} \neg \left( P \vee Q \right) \vee \neg \left( P \vee \neg Q \right) \vee \neg \left( \neg P \vee Q \right)$
+		\end{enumerate}
+	\end{enumerate}
+\end{document}
