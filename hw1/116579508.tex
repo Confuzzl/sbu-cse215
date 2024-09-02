@@ -442,7 +442,7 @@
 					& \neg p \wedge r \rightarrow u & && \\
 					& w \vee t & && \\ \hline
 					\therefore{} & r & \text{elimination by (5) and (8)} && \\
-					\therefore{} & u & \text{specialization and modus ponens by (9) amd (11)} && \\
+					\therefore{} & u & \text{specialization and modus ponens by (9) and (11)} && \\
 					\therefore{} & \neg t & \text{modus ponens by (6) and (8)} && \\
 					\therefore{} & w & \text{elimination by (10) and (11)} && \\ \hline					
 					\therefore{} & u \wedge w & \text{by (12) and (14)} &&
@@ -452,9 +452,11 @@
 		
 		\item [] \textbf{Problem 7.}
 		\begin{enumerate}
-			\item For the circuit corresponding to the following Boolean expression, there is an equivalent circuit with at most two logic gates. Find such a circuit. \\\\
+			\item For the circuit corresponding to the following Boolean expression, there is an equivalent circuit with at most two logic gates. Find such a circuit. \\
+			$\left( \neg P \wedge \neg Q \right) \vee \left( \neg P \wedge Q \right) \vee \left( P \wedge \neg Q \right)$ \\
+			
 			Using DeMorgan's Laws to rewrite ands using only nots and ors: \\
-			$\left( \neg P \wedge \neg Q \right) \vee \left( \neg P \wedge Q \right) \vee \left( P \wedge \neg Q \right) \equiv{} \neg \left( P \vee Q \right) \vee \neg \left( P \vee \neg Q \right) \vee \neg \left( \neg P \vee Q \right)$
+			$\neg \left( P \vee Q \right) \vee \neg \left( P \vee \neg Q \right) \vee \neg \left( \neg P \vee Q \right)$
 		\end{enumerate}
 	\end{enumerate}
 \end{document}
