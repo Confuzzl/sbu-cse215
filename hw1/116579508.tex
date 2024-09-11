@@ -4,6 +4,8 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{circuitikz}
+\ctikzset{logic ports=ieee}
 
 \begin{document}
 	\begin{enumerate} 
@@ -360,11 +362,11 @@
 			\item Set 2.3
 			\begin{itemize}
 				\item [11.]
-				\begin{flalign}
+				\begin{flalign*}
 					& p \rightarrow q \vee r & \\
 					& \neg q \vee \neg r & \\
 					\therefore{} & \neg p \vee \neg r &
-				\end{flalign}
+				\end{flalign*}
 				$\begin{array}{c|c|c|c|c|c}	
 					p & q & r & p \rightarrow q \vee r & \neg q \vee \neg r & \neg p \vee \neg r \\ \hline
 					F & F & F & T & T & T \\ \hline
@@ -411,17 +413,19 @@
 					How many knaves are there?
 					\begin{flalign*}
 						& \textbf{Suppose $E$ and $F$ are knaves.} & \\ 
-						\therefore{} & F \\
-						\therefore{} & E & \text{contradiction} & \\ 
+						\therefore{} & \text{$F$ is a knight} & \text{opposite of what $E$ said} \\
+						\therefore{} & \text{$F$ is a knight and a knave} & \text{contradiction} & \\ 
 						& \textbf{Suppose $E$ is a knave and $F$ is a knight.} & \\ 
-						\therefore{} & F \\
-						\therefore{} & \neg E & \text{1 knight and 1 knave} & \\
+						\therefore{} & \text{$F$ is a knight} & \text{opposite of what $E$ said} \\
+						\therefore{} & \text{$E$ is a knave} & \text{what $F$ said} \\
+						\therefore{} & \text{1 knight and 1 knave} \\
 						& \textbf{Suppose $E$ is a knight and $F$ is a knave.} & \\ 
-						\therefore{} & \neg F \\
-						\therefore{} & E & \text{1 knight and 1 knave} & \\
+						\therefore{} & \text{$F$ is a knave} & \text{what $E$ said} \\
+						\therefore{} & \text{$E$ is a knight} & \text{opposite of what $F$ said} \\
+						\therefore{} & \text{1 knight and 1 knave} \\
 						& \textbf{Suppose $E$ and $F$ are knights.} & \\ 
-						\therefore{} & \neg F \\
-						\therefore{} & \neg E & \text{contradiction} &
+						\therefore{} & \text{$F$ is a knave} & \text{what $E$ said} \\
+						\therefore{} & \text{$F$ is a knight and a knave} & \text{contradiction} & \\
 					\end{flalign*}
 					There is 1 knave.
 				\end{itemize}
@@ -441,11 +445,13 @@
 					& \neg s & && \\
 					& \neg p \wedge r \rightarrow u & && \\
 					& w \vee t & && \\ \hline
-					\therefore{} & r & \text{elimination by (5) and (8)} && \\
-					\therefore{} & u & \text{specialization and modus ponens by (9) and (11)} && \\
-					\therefore{} & \neg t & \text{modus ponens by (6) and (8)} && \\
-					\therefore{} & w & \text{elimination by (10) and (11)} && \\ \hline					
-					\therefore{} & u \wedge w & \text{by (12) and (14)} &&
+					\therefore{} & r & \text{elimination by (2) and (5)} && \\
+					\therefore{} & \neg t & \text{modus ponens by (3) and (5)} && \\
+					\therefore{} & \neg q & \text{elimination by (4) and (5)} && \\
+					\therefore{} & \neg p & \text{modus tollens by (1) and (10)} && \\
+					\therefore{} & u & \text{modus ponens by (11), (8) and (6)} && \\
+					\therefore{} & w & \text{elimination by (7) and (9)} && \\ \hline					
+					\therefore{} & u \wedge w & \text{conjunction by (12) and (14)} &&
 				\end{flalign}
 			\end{itemize}
 		\end{enumerate}
@@ -457,6 +463,46 @@
 			
 			Using DeMorgan's Laws to rewrite ands using only nots and ors: \\
 			$\neg \left( P \vee Q \right) \vee \neg \left( P \vee \neg Q \right) \vee \neg \left( \neg P \vee Q \right)$
+			
+			\begin{circuitikz}
+			\draw 
+			(-4,5) node[circ] (inP) {P}
+			(-3,5) node[circ] (inQ) {Q}
+			
+			(0,0) node[or port] (npoq) {$\neg P \vee Q$}
+			($(npoq.in 1)-(0.5,0)$) node[not port,scale=0.5] (np) {}
+			(np) -- (npoq.in 1)
+			(inP) |- (np.in)
+			(inQ) |- (npoq.in 2)
+			(1.5,0) node[not port,scale=0.5] (n-npoq) {}
+			(npoq.out) -- (n-npoq.in) {}
+			
+			(0,2) node[or port] (ponq) {$P \vee \neg Q$}
+			($(ponq.in 2)-(0.5,0)$) node[not port,scale=0.5] (nq) {}
+			(nq) -- (ponq.in 2)
+			(inP) |- (ponq.in 1)
+			(inQ) |- (nq.in)
+			(1.5,2) node[not port,scale=0.5] (n-ponq) {}
+			(ponq.out) -- (n-ponq.in)
+			
+			(0,4) node[or port] (poq) {$P \vee Q$}
+			(inP) |- (poq.in 1)
+			(inQ) |- (poq.in 2)
+			(1.5,4) node[not port,scale=0.5] (n-poq) {}
+			(poq.out) -- (n-poq)
+			
+			(3,1) node[or port] (or1) {}
+			(n-npoq.out) |- (or1.in 2) {}
+			(n-ponq.out) |- (or1.in 1) {}
+			
+			(5.5,3) node[or port] (or2) {}
+			(or1.out) -| (or2.in 2) {}
+			(n-poq.out) -| (or2.in 1) {}
+			
+			(or2.out) node[circ, anchor=west, xshift=0.25in] (output) {} 
+			(or2.out) -- (output) {}
+			;
+			\end{circuitikz}
 		\end{enumerate}
 	\end{enumerate}
 \end{document}
