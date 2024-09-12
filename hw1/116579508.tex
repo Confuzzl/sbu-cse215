@@ -104,17 +104,18 @@
 				\item [46.] \quad
 				\begin{enumerate}[(a)]
 					\item 
-					\begin{flalign*}
+					$\begin{aligned}[t]
 						p \oplus p & \equiv \left( p \vee p \right) \wedge \neg \left( p \wedge p \right) &\\
 						& \equiv T \wedge \neg T &\\
 						& \equiv F &
-					\end{flalign*}
-					\begin{flalign*}
+					\end{aligned}$
+					\qquad
+					$\begin{aligned}[t]
 						\left( p \oplus p \right) \oplus p & \equiv F \oplus p &\\
 						& \equiv \left( F \vee p \right) \wedge \neg \left( F \wedge p \right) &\\
 						& \equiv p \wedge T &\\
 						& \equiv p &
-					\end{flalign*}
+					\end{aligned}$
 					
 					\item
 					$\left( p \oplus q \right) \oplus r \stackrel{?}{\equiv} p \oplus \left( q \oplus r \right)$ \\
@@ -129,6 +130,7 @@
 						T & T & F & F & F & T & F \\ \hline
 						T & T & T & F & T & F & T \\ 
 					\end{array}$ \\
+					\\
 					$\left( p \oplus q \right) \oplus r \equiv p \oplus \left( q \oplus r \right)$ because they have identical truth values for all possible substitutions.
 					
 				\end{enumerate}
@@ -171,6 +173,7 @@
 						T & F & F & F \\ \hline
 						T & T & T & T \\
 					\end{array}$ \\
+					\\
 					They have identical truth values for all possible substitutions.
 					
 					\item
@@ -181,6 +184,7 @@
 						T & F & T & T \\ \hline
 						T & T & F & F \\
 					\end{array}$ \\
+					\\
 					They have identical truth values for all possible substitutions.
 				\end{enumerate}				
 			\end{itemize}
@@ -356,18 +360,20 @@
 				\end{enumerate}
 			\end{itemize}
 		\end{enumerate}
+		\newpage
 		
 		\item [] \textbf{Problem 4.}
 		\begin{enumerate}
 			\item Set 2.3
 			\begin{itemize}
 				\item [11.]
-				\begin{flalign*}
+				$\begin{aligned}[t]
 					& p \rightarrow q \vee r & \\
 					& \neg q \vee \neg r & \\
 					\therefore{} & \neg p \vee \neg r &
-				\end{flalign*}
-				$\begin{array}{c|c|c|c|c|c}	
+				\end{aligned}\\
+				\begin{array}{c|c|c|c|c|c}	
+					& & & \text{Premise 1} & \text{Premise 2} & \text{Conclusion} \\
 					p & q & r & p \rightarrow q \vee r & \neg q \vee \neg r & \neg p \vee \neg r \\ \hline
 					F & F & F & T & T & T \\ \hline
 					F & F & T & T & T & T \\ \hline
@@ -378,6 +384,7 @@
 					T & T & F & T & T & F \\ \hline
 					T & T & T & T & F &   \\ 
 				\end{array}$ \\
+				\\
 				Invalid argument because true premises can lead to a false conclusion.
 			\end{itemize}
 		\end{enumerate}
@@ -390,6 +397,7 @@
 				\begin{itemize}
 					\item [(b)]
 					Another two natives $C$ and $D$ approach you but only $C$ speaks. \\
+					\\
 					$C$ says: Both of us are knaves. \\
 					What are $C$ and $D$?
 					\begin{flalign*}
@@ -405,9 +413,10 @@
 						\therefore{} & \text{$D$ is a knight} & \text{by elimination} & \\
 						\therefore{} & \text{$C$ is a knave and $D$ is a knight}
 					\end{flalign*}
-					
+					\newpage
 					\item [(c)]
 					You then encounter natives $E$ and $F$. \\
+					\\
 					$E$ says: $F$ is a knave. \\
 					$F$ says: $E$ is a knave. \\
 					How many knaves are there?
@@ -455,6 +464,7 @@
 				\end{flalign}
 			\end{itemize}
 		\end{enumerate}
+		\newpage
 		
 		\item [] \textbf{Problem 7.}
 		\begin{enumerate}
@@ -462,14 +472,14 @@
 			$\left( \neg P \wedge \neg Q \right) \vee \left( \neg P \wedge Q \right) \vee \left( P \wedge \neg Q \right)$ \\
 			
 			Using DeMorgan's Laws to rewrite ands using only nots and ors: \\
-			$\neg \left( P \vee Q \right) \vee \neg \left( P \vee \neg Q \right) \vee \neg \left( \neg P \vee Q \right)$
+			$\neg \left( P \vee Q \right) \vee \neg \left( P \vee \neg Q \right) \vee \neg \left( \neg P \vee Q \right)$\\
 			
 			\begin{circuitikz}
 			\draw 
-			(-4,5) node[circ] (inP) {P}
-			(-3,5) node[circ] (inQ) {Q}
+			(-4,5) node[circ, label=0:$P$] (inP) {}
+			(-3,5) node[circ, label=0:$Q$] (inQ) {}
 			
-			(0,0) node[or port] (npoq) {$\neg P \vee Q$}
+			(0,0) node[or port, label={[label distance=0.2in]above:$\neg P \vee Q$}] (npoq) {}
 			($(npoq.in 1)-(0.5,0)$) node[not port,scale=0.5] (np) {}
 			(np) -- (npoq.in 1)
 			(inP) |- (np.in)
@@ -477,7 +487,7 @@
 			(1.5,0) node[not port,scale=0.5] (n-npoq) {}
 			(npoq.out) -- (n-npoq.in) {}
 			
-			(0,2) node[or port] (ponq) {$P \vee \neg Q$}
+			(0,2) node[or port, label={[label distance=0.2in]above:$P \vee \neg Q$}] (ponq) {}
 			($(ponq.in 2)-(0.5,0)$) node[not port,scale=0.5] (nq) {}
 			(nq) -- (ponq.in 2)
 			(inP) |- (ponq.in 1)
@@ -485,7 +495,7 @@
 			(1.5,2) node[not port,scale=0.5] (n-ponq) {}
 			(ponq.out) -- (n-ponq.in)
 			
-			(0,4) node[or port] (poq) {$P \vee Q$}
+			(0,4) node[or port, label={[label distance=0.2in]above:$P \vee Q$}] (poq) {}
 			(inP) |- (poq.in 1)
 			(inQ) |- (poq.in 2)
 			(1.5,4) node[not port,scale=0.5] (n-poq) {}

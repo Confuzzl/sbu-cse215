@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.28)  11 SEP 2024 17:57
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.28)  11 SEP 2024 23:35
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -665,21 +665,36 @@ File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 [1
 
 {C:/Users/fuzzl/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
-Underfull \hbox (badness 10000) in paragraph at lines 140--148
+Underfull \hbox (badness 10000) in paragraph at lines 121--135
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 142--150
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 152--164
 
  []
 
 
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 150--162
+Underfull \hbox (badness 10000) in paragraph at lines 168--178
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 180--189
 
  []
 
 
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 295--297
+Underfull \hbox (badness 10000) in paragraph at lines 299--301
 
  []
 
@@ -688,15 +703,35 @@ Underfull \hbox (badness 10000) in paragraph at lines 295--297
 [4]
 
 [5]
+Underfull \hbox (badness 10000) in paragraph at lines 370--389
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 399--403
+
+ []
+
+
 
 [6]
-Underfull \hbox (badness 10000) in paragraph at lines 461--463
+Underfull \hbox (badness 10000) in paragraph at lines 418--423
 
  []
 
 
 
 [7]
+Underfull \hbox (badness 10000) in paragraph at lines 471--473
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 474--476
+
+ []
+
+
 
 [8] (116579508.aux)
  ***********
@@ -705,10 +740,10 @@ L3 programming layer <2024-07-20>
  ***********
  ) 
 Here is how much of TeX's memory you used:
- 31641 strings out of 473899
- 815270 string characters out of 5726500
- 1968960 words of memory out of 5000000
- 54225 multiletter control sequences out of 15000+600000
+ 31660 strings out of 473899
+ 815644 string characters out of 5726500
+ 1970960 words of memory out of 5000000
+ 54244 multiletter control sequences out of 15000+600000
  561041 words of font info for 48 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  117i,13n,121p,441b,952s stack positions out of 10000i,1000n,20000p,200000b,200000s
@@ -721,7 +756,7 @@ X/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/fuzzl/AppData/Local/Progr
 ams/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/fuzzl/AppData/Loc
 al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmti10.pfb><C:/Users/fuzzl/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on 116579508.pdf (8 pages, 125656 bytes).
+Output written on 116579508.pdf (8 pages, 125518 bytes).
 PDF statistics:
  72 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
