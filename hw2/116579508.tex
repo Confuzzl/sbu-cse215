@@ -1,21 +1,170 @@
-\documentclass[letterpaper]{article}
+\documentclass[letterpaper,fleqn]{article}
 
 \usepackage{enumerate}
 \usepackage{amsmath}
 \usepackage{amssymb}
-%\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage[letterpaper, margin=1in]{geometry}
 %\usepackage{circuitikz}
 %\ctikzset{logic ports=ieee}
 
 \begin{document}
 	\begin{enumerate} 
 		\item [] \textbf{Problem 1.}
-		\item [] \textbf{Problem 2.}	
-		\item [] \textbf{Problem 3.}	
-		\item [] \textbf{Problem 4.}	
+		\begin{enumerate}[]
+			\item Set 3.1
+			\begin{enumerate}
+				\item [10.]
+				$\forall$ positive integers $m$ and $n$, $m \times n \geq m + n$ \\
+				$m=0$, $n=1$
+				$\begin{aligned}[t]
+					0 \times 1 & \stackrel{?}{\geq} 0 + 1 \\
+					0 & \not\geq 1
+				\end{aligned}$
+				
+				\item [12.]
+				$\forall$ real numbers $x$ and $y$, $\sqrt{x+y} = \sqrt{x}+\sqrt{y}$ \\
+				$x=1$, $y=1$ \\
+				$m=0$, $n=1$ \\
+				$\begin{aligned}[t]
+					\sqrt{1+1} & \stackrel{?}{=} \sqrt{1}+\sqrt{1} \\
+					\sqrt{2} & \not= 2
+				\end{aligned}$
+				
+			\end{enumerate}
+		\end{enumerate}
+		
+		\item [] \textbf{Problem 2.}
+		\begin{enumerate}[]
+			\item Set 3.1
+			\begin{enumerate}
+				\item [29.] \quad
+				\begin{enumerate}[(a)]
+					\item
+					$\exists x$ such that Rect($x$) $\wedge$ Square($x$) \\
+					There are geometric figures that are both rectangles and squares. \\
+					True; squares are both rectangles and squares.
+					\item
+					$\exists x$ such that Rect($x$) $\wedge$ $\neg$Square($x$) \\ 
+					There are geometric figures that are rectangles but not squares. \\
+					True; rectangles of unequal side lengths are rectangles but not squares.
+					\item
+					$\forall x$, Square($x$) $\rightarrow$ Rect($x$) \\
+					If a geometric figure is a square, it is a rectangle. \\
+					True; squares have all the criteria of rectangles but have the added criteria of equal side lengths.
+				\end{enumerate}
+			\end{enumerate}
+		\end{enumerate}
+		
+		\item [] \textbf{Problem 3.}
+		\begin{enumerate}[]
+			\item Set 3.1
+			\begin{enumerate}
+				\item [33.] \quad
+				\begin{enumerate}
+					\item [(c)]
+					$ab = 0 \Rightarrow a = 0$ or $b=0$ \\
+					True
+					
+					\item [(d)]
+					$a < b$ and $c < d \Rightarrow ac < bd$ \\
+					$a=-1$, $b=0$, $c=-1$, $d=0$ \\
+					$\begin{aligned}[t]
+						-1 \times -1 & \stackrel{?}{<} 0 \times 0 \\
+						1 & \not < 0
+					\end{aligned}$ \\
+					False
+				\end{enumerate}
+			\end{enumerate}
+		\end{enumerate}
+		
+		\item [] \textbf{Problem 4.}
+		\begin{enumerate}[]
+			\item Set 3.2
+			\begin{enumerate}
+				\item [10.]
+				$\forall$ computer programs $P$, if $P$ compiles without error messages, then $P$ is correct. \\
+				$\exists P$ such that $P$ compiles without error messages and isn't correct.
+				
+				\item [17.]
+				$\forall$ integers $d$, if $6/d$ is an integer then $d=3$. \\
+				$\exists d$ such that $6/d$ is an integer and $d \not= 3$.
+				
+				\item [19.]
+				$\forall n \in \mathbf{Z}$, if $n$ is prime then $n$ is odd or $n=2$. \\
+				$\exists n \in \mathbf{Z}$ such that $n$ is prime and $n$ is even and $n=2$.
+				
+				\item [21.]
+				$\forall$ integers $n$, if $n$ is divisible by 6, then $n$ is divisible by 2 and $n$ is divisible by 3. \\
+				$\exists n$ such that $n$ is divisible by 6 and not divisible by 2 and not divisible by 3. 
+				
+				\item [23.]
+				If a function is differentiable then it is continuous. \\
+				There exists a function that is differentiable and not continuous.
+			\end{enumerate}
+		\end{enumerate}
+		
 		\item [] \textbf{Problem 5.}
+		\begin{enumerate}[]
+			\item Set 3.2
+			\begin{enumerate}
+				\item [40.]
+				Being divisible by 8 is a sufficient condition or being divisible by 4. \\
+				If $n$ is divisible by 7, then $n$ is divisible by 4.
+				
+				\item [42.]
+				Passing a comprehensive exam is a necessary condition for obtaining a master's degree. \\
+				If one does not pass a comprehensive exam, then one cannot obtain a master's degree.
+				
+				\item [44.]
+				Having a large income is not a necessary condition for a person to be happy. \\
+				$\neg(\forall x (\text{HighIncome}(x) \leftrightarrow \text{Happy}(x)))$ \\
+				There exists a happy person that doesn't have a large income.
+				
+				\item [46.]
+				Being a polynomial is not a sufficient condition for a function to have a real root. \\
+				There exists a non polynomial function 
+				
+				\item [47.]
+			\end{enumerate}
+		\end{enumerate}
+		
 		\item [] \textbf{Problem 6.}
+		\begin{enumerate}[]
+			\item Set 3.3
+			\begin{enumerate}
+				\item [41.] \quad
+				\begin{enumerate}
+					\item [(c)]
+					\item [(d)]
+					\item [(f)]
+					\item [(g)]
+					\item [(h)]
+				\end{enumerate}
+			\end{enumerate}
+		\end{enumerate}
+		
 		\item [] \textbf{Problem 7.}
+		\begin{enumerate}[]
+			\item Set 3.4
+			\begin{enumerate}
+				\item [13.]
+				\item [14.]
+				\item [15.]
+				\item [17.]
+				\item [18.]
+			\end{enumerate}
+		\end{enumerate}
+		
 		\item [] \textbf{Problem 8.}
+		\begin{enumerate}[]
+			\item Set 3.4
+			\begin{enumerate}
+				\item [22.]
+				\item [23.]
+				\item [24.]
+				\item [26.]
+				\item [27.]
+			\end{enumerate}
+		\end{enumerate}
 	\end{enumerate}
 \end{document}
