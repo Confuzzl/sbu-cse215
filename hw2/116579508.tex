@@ -4,8 +4,7 @@
 \usepackage{amsmath}
 \usepackage{amssymb}
 \usepackage[letterpaper, margin=1in]{geometry}
-%\usepackage{circuitikz}
-%\ctikzset{logic ports=ieee}
+\usepackage{tikz}
 
 \begin{document}
 	\begin{enumerate} 
@@ -90,8 +89,8 @@
 				$\exists d$ such that $6/d$ is an integer and $d \not= 3$.
 				
 				\item [19.]
-				$\forall n \in \mathbf{Z}$, if $n$ is prime then $n$ is odd or $n=2$. \\
-				$\exists n \in \mathbf{Z}$ such that $n$ is prime and $n$ is even and $n=2$.
+				$\forall n \in \mathbb{Z}$, if $n$ is prime then $n$ is odd or $n=2$. \\
+				$\exists n \in \mathbb{Z}$ such that $n$ is prime and $n$ is even and $n=2$.
 				
 				\item [21.]
 				$\forall$ integers $n$, if $n$ is divisible by 6, then $n$ is divisible by 2 and $n$ is divisible by 3. \\
@@ -117,14 +116,21 @@
 				
 				\item [44.]
 				Having a large income is not a necessary condition for a person to be happy. \\
-				$\neg(\forall x (\text{HighIncome}(x) \leftrightarrow \text{Happy}(x)))$ \\
+				$\neg(\forall x (\text{Happy}(x) \rightarrow \text{HighIncome}(x)))$ \\
+				$\exists x (\text{Happy}(x) \wedge \neg \text{HighIncome}(x)))$ \\
 				There exists a happy person that doesn't have a large income.
 				
 				\item [46.]
 				Being a polynomial is not a sufficient condition for a function to have a real root. \\
-				There exists a non polynomial function 
+				$\neg(\forall x (\text{Polynomial}(x) \rightarrow \text{RealRoot}(x)))$ \\
+				$\exists x (\text{Polynomial}(x) \wedge \neg\text{RealRoot}(x)))$ \\
+				There exists a polynomial function without a real root.
 				
 				\item [47.]
+				The absence of error messages during translation of a computer program is only a necessary and not a sufficient condition for reasonable [program] correctness. \\
+				$\forall x (\text{Correct}(x) \rightarrow \neg\text{Error}(x) \wedge \neg\text{Error}(x) \not\rightarrow \text{Correct}(x))$ \\
+				There are no error messages whenever a program is correct, but there are incorrect programs without error messages.
+				
 			\end{enumerate}
 		\end{enumerate}
 		
@@ -135,10 +141,35 @@
 				\item [41.] \quad
 				\begin{enumerate}
 					\item [(c)]
+					$\exists x \in \mathbb{R}$ such that $\forall y \in \mathbb{R}$, $x=y+1$ \\
+					True because $\mathbb{R}$ is closed under addition.
+					
 					\item [(d)]
+					$\begin{aligned}[t]
+						\forall x \in \mathbb{R}^+ \text{, } \exists y \in \mathbb{R}^+ \text{ such that } xy &=1 \\
+						y &=\frac{1}{x}
+					\end{aligned}$ \\\\
+					True because $\mathbb{R}^+$ is closed under division.
+					
 					\item [(f)]
+					$\forall x \in \mathbb{Z}^+$ and $\forall y \in \mathbb{Z}^+$, $\exists z \in \mathbb{Z}^+$ such that $z=x-y$ \\
+					False because $\mathbb{Z}^+$ isn't closed under division. \\
+					$x=1$, $y=2$ \\
+					$z=-1 \therefore z \not\in \mathbb{Z}^+$.
+					
+					
+					
 					\item [(g)]
+					$\forall x \in \mathbb{Z}$ and $\forall y \in \mathbb{Z}$, $\exists z \in \mathbb{Z}$ such that $z=x-y$ \\
+					True because $\mathbb{Z}$ is closed under subtraction.
+					
 					\item [(h)]
+					$\begin{aligned}[t]
+						\exists u \in \mathbb{R}^+ \text{ such that } \forall v \in \mathbb{R}^+ \text{, } uv &<v \\
+						u &< 1
+					\end{aligned}$ \\\\
+					True because $\{u \in \mathbb{R}^+ \,|\, u<1\} \subset \mathbb{R}^+$.
+					
 				\end{enumerate}
 			\end{enumerate}
 		\end{enumerate}
@@ -148,10 +179,46 @@
 			\item Set 3.4
 			\begin{enumerate}
 				\item [13.]
+				$\begin{aligned}[t]
+					& \text{For all students $x$, if $x$ studies discrete mathematics, then
+					$x$ is good at logic.} \\
+					& \text{Tarik studies discrete mathematics.} \\
+					\therefore{} & \text{Tarik is good at logic.}
+				\end{aligned}$ \\\\
+				Valid by universal modus ponens.
+				
 				\item [14.]
+				$\begin{aligned}[t]
+					& \text{If compilation of a computer program produces error messages, then the program is not correct.} \\
+					& \text{Compilation of this program does not produce error messages.} \\
+					\therefore{} & \text{This program is correct.}
+				\end{aligned}$ \\\\
+				Invalid by inverse error.
+				
 				\item [15.]
+				$\begin{aligned}[t]
+					& \text{Any sum of two rational numbers is rational.} \\
+					& \text{The sum $r+s$ is rational.} \\
+					\therefore{} & \text{The numbers $r$ and $s$ are both rational.}
+				\end{aligned}$ \\\\
+				Invalid by converse error.
+				
 				\item [17.]
+				$\begin{aligned}[t]
+					& \text{If an infinite series converges, then the terms go to 0.} \\
+					& \text{The terms of the infinite series $\sum_{n=1}^{\infty}\frac{1}{n}$ go to 0.} \\
+					\therefore{} & \text{The infinite series $\sum_{n=1}^{\infty}\frac{1}{n}$ converges.} 
+				\end{aligned}$ \\\\
+				Invalid by converse error.
+				
 				\item [18.]
+				$\begin{aligned}[t]
+					& \text{If an infinite series converges, then the terms go to 0.} \\
+					& \text{The terms of the infinite series $\sum_{n=1}^{\infty}\frac{1}{n+1}$ do not go to 0.} \\
+					\therefore{} & \text{The infinite series $\sum_{n=1}^{\infty}\frac{1}{n+1}$ does not converge.} 
+				\end{aligned}$ \\\\
+				Valid by universal modus tollens.
+				
 			\end{enumerate}
 		\end{enumerate}
 		
@@ -159,11 +226,152 @@
 		\begin{enumerate}[]
 			\item Set 3.4
 			\begin{enumerate}
+				\newcommand{\diagram}[1]{
+				\begin{tikzpicture}[baseline={(current bounding box.north)}, font=\scriptsize]
+				\draw[align=center]
+				#1
+				;
+				\end{tikzpicture}}
+				\newcommand{\bubble}[4]{
+				(#1) circle (#2) node[black, yshift=#3] {#4}
+				}
+				\newcommand{\obubble}[1]{\bubble{0,0}{1.5}{0.4in}{#1}}
+				\newcommand{\ibubble}[1]{\bubble{0,-0.4}{1}{0}{#1}}
+				\newcommand{\dlabel}[2]{(#1) node {#2}}
+				\newcommand{\ddlabel}[1]{\dlabel{0,-2}{#1}}
+				
 				\item [22.]
+				$\begin{aligned}[t]
+					& \text{All discrete mathematics students can tell a valid argument from an invalid one.} \\
+					& \text{All thoughtful people can tell a valid argument from an invalid one.} \\
+					\therefore{} & \text{All discrete mathematics students are thoughtful.} 
+				\end{aligned}$ \\\\
+				Invalid. \\
+				\diagram{
+				\obubble{Validity tellers}
+				\ibubble{Discrete math\\students (S)}
+				\ddlabel{Major premise}
+				}
+				\diagram{
+				\obubble{Validity tellers}
+				\ibubble{Thoughtful\\people (P)}
+				\ddlabel{Minor premise}
+				} \\
+				
+				\diagram{
+				\bubble{0,0}{1.5}{0.4in}{Validity tellers}
+				\bubble{-0.7,-0.4}{0.6}{0in}{S}
+				\bubble{0.7,-0.4}{0.6}{0in}{P}
+				\ddlabel{(a)}
+				}
+				\diagram{
+				\bubble{0,0}{1.5}{0.4in}{Validity tellers}
+				\bubble{-0.4,-0.4}{0.6}{0in}{S}
+				\bubble{0.4,-0.4}{0.6}{0in}{P}
+				\ddlabel{(b)}
+				}
+				\diagram{
+				\bubble{0,0}{1.5}{0.4in}{Validity tellers}
+				\bubble{0,-0.4}{1}{0in}{S=P}
+				\ddlabel{(c)}
+				} \\
+				\newpage
+				
 				\item [23.]
+				$\begin{aligned}[t]
+					& \text{All teachers occasionally make mistakes.} \\
+					& \text{No gods ever make mistakes.} \\
+					\therefore{} & \text{No teachers are gods.} 
+				\end{aligned}$ \\\\
+				Valid.\\
+				\diagram{
+				\obubble{Mistake makers}
+				\ibubble{Teachers}
+				\ddlabel{Major premise}
+				}
+				\diagram{
+				\bubble{0,0}{1.5}{0}{Gods}
+				\ddlabel{Minor premise}
+				} \\
+				\diagram{
+				\obubble{Mistake makers}
+				\ibubble{Teachers}
+				\bubble{3.25,0}{1.5}{0}{Gods}
+				\dlabel{1.625,-2}{(a)}
+				}
+				
 				\item [24.]
+				$\begin{aligned}[t]
+					& \text{No vegetarians eat meat.} \\
+					& \text{All vegans are vegetarian.} \\
+					\therefore{} & \text{No vegans eat meat.} 
+				\end{aligned}$ \\\\
+				Valid. \\
+				\diagram{
+				\obubble{Doesn't eat\\meat}
+				\ibubble{Vegetarians}
+				\ddlabel{Major premise}
+				}
+				\diagram{
+				\obubble{Vegetarians}
+				\ibubble{Vegans}
+				\ddlabel{Minor premise}
+				} \\
+				\diagram{
+				\bubble{0,0}{2}{0.6in}{Doesn't eat\\meat}
+				\bubble{0,-0.4}{1.5}{0.4in}{Vegetarians}
+				\bubble{0,-0.8}{1}{0}{Vegans}
+				\dlabel{0,-2.5}{(a)}
+				}
+				\newpage
+				
 				\item [26.]
+				$\begin{aligned}[t]
+					& \text{All polynomial functions are differentiable.} \\
+					& \text{All differentiable functions are continuous.} \\
+					\therefore{} & \text{All polynomial functions are continuous.} 
+				\end{aligned}$ \\\\
+				Valid. \\
+				\diagram{
+				\obubble{Differentiable}
+				\ibubble{Polynomial}
+				\ddlabel{Major premise}
+				}
+				\diagram{
+				\obubble{Continuous}
+				\ibubble{Differentiable}
+				\ddlabel{Minor premise}
+				} \\
+				\diagram{
+				\bubble{0,0}{2}{0.6in}{Continuous}
+				\bubble{0,-0.4}{1.5}{0.4in}{Differentiable}
+				\bubble{0,-0.8}{1}{0}{Polynomial}
+				\dlabel{0,-2.5}{(a)}
+				}
+				
 				\item [27.]
+				$\begin{aligned}[t]
+					& \text{Nothing intelligible ever puzzles me.} \\
+					& \text{Logic puzzles me.} \\
+					\therefore{} & \text{Logic is unintelligible.} 
+				\end{aligned}$ \\\\
+				Valid. \\
+				\diagram{
+				\bubble{-1.625,0}{1.5}{0}{Intelligible}
+				\bubble{1.625,0}{1.5}{0}{Puzzling}
+				\ddlabel{Major Premise}
+				} 
+				\diagram{
+				\obubble{Puzzling}
+				\ibubble{Logic}
+				\ddlabel{Minor Premise}
+				} \\
+				\diagram{
+				\bubble{-1.625,0}{1.5}{0}{Intelligible}
+				\bubble{1.625,0}{1.5}{0.4in}{Puzzling}
+				\bubble{1.625,-0.4}{1}{0}{Logic}
+				\ddlabel{(a)}
+				}
 			\end{enumerate}
 		\end{enumerate}
 	\end{enumerate}
