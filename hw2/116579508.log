@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.28)  17 SEP 2024 13:20
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.28)  17 SEP 2024 13:29
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -614,86 +614,86 @@ Underfull \hbox (badness 10000) in paragraph at lines 148--153
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 167--172
+Underfull \hbox (badness 10000) in paragraph at lines 165--170
 
  []
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is:  on input line 178.
+             The label is:  on input line 176.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 182--189
+Underfull \hbox (badness 10000) in paragraph at lines 180--187
 
  []
 
 
-Overfull \hbox (9.529pt too wide) in paragraph at lines 191--197
+Overfull \hbox (9.529pt too wide) in paragraph at lines 189--195
 []$[][]$ 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 191--197
+Underfull \hbox (badness 10000) in paragraph at lines 189--195
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 199--205
+Underfull \hbox (badness 10000) in paragraph at lines 197--203
 
  []
 
 
 
 [2]
-Underfull \hbox (badness 10000) in paragraph at lines 207--213
+Underfull \hbox (badness 10000) in paragraph at lines 205--211
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 215--221
+Underfull \hbox (badness 10000) in paragraph at lines 213--219
 
  []
 
 
 LaTeX Warning: The counter will not be printed.
-             The label is:  on input line 226.
+             The label is:  on input line 224.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 244--260
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 244--260
+Underfull \hbox (badness 10000) in paragraph at lines 242--258
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 266--278
+Underfull \hbox (badness 10000) in paragraph at lines 242--258
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 264--276
 
  []
 
 
 
 [3]
-Underfull \hbox (badness 10000) in paragraph at lines 281--302
+Underfull \hbox (badness 10000) in paragraph at lines 279--300
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 304--326
+Underfull \hbox (badness 10000) in paragraph at lines 302--324
 
  []
 
 
 
 [4]
-Underfull \hbox (badness 10000) in paragraph at lines 329--351
+Underfull \hbox (badness 10000) in paragraph at lines 327--349
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 353--375
+Underfull \hbox (badness 10000) in paragraph at lines 351--373
 
  []
 
@@ -725,7 +725,7 @@ pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/
 fuzzl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.
 pfb><C:/Users/fuzzl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/s
 ymbols/msbm10.pfb>
-Output written on 116579508.pdf (5 pages, 126982 bytes).
+Output written on 116579508.pdf (5 pages, 126995 bytes).
 PDF statistics:
  71 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
