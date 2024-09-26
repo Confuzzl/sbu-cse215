@@ -1,0 +1,433 @@
+\documentclass[letterpaper,fleqn]{article}
+
+\usepackage{multicol}
+\setlength{\columnseprule}{1pt}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{xcolor}
+\usepackage{cancel}
+
+\begin{document}
+	
+	\begin{enumerate}
+		\newcommand{\set}[1]{Exercise Set 4.#1}
+		
+		\newcounter{pcount}
+		\setcounter{pcount}{1}
+		
+		\newcommand{\problem}[2]{	
+		\item [] \textbf{Problem \thepcount\stepcounter{pcount}.}
+		\begin{enumerate}
+			\item [] Exercise Set 4.#1
+			\begin{enumerate}
+				#2
+			\end{enumerate}
+		\end{enumerate}
+		}
+		
+		\problem{1}{
+		\item [52.]
+		For all integers $m$, if $m>2$ then $m^2-4$ is composite. \\
+		False \\
+		$m=3$, $3^2-4=5$ \\
+		5 is prime, not composite, because its only factors are 1 and 5.
+		
+		\item [53.]
+		For all integers $n$, $n^2-n+11$ is a prime number.
+		False \\
+		$n=11$, $11^2-11+11=121$ \\
+		121 is composite, not prime, because it has factors 11 and 11.
+		}
+		
+		\problem{1}{
+		\item [61.]
+		Suppose that integers $m$ and $n$ are perfect squares. Then $m+n+2\sqrt{mn}$ is also a perfect square. Why? \\
+		\textbf{Proof:} \\
+		Let $m=a^2$, for some $a \in \mathbb{Z}$ \\
+		Let $n=b^2$, for some $b \in \mathbb{Z}$ \\
+		$\begin{aligned}[t]
+			m+n+2\sqrt{mn} ={} & a^2+b^2+2\sqrt{a^2b^2}  && \text{substitution} \\
+			={} & a^2+b^2+2ab \\
+			={} & (a+b)^2 && \text{factoring} \\
+			={} & c^2 && \text{let $c=a+b$}
+		\end{aligned}$ \\
+		$c \in \mathbb{Z}$ because addition is closed under $\mathbb{Z}$ \\
+		$m+n+2\sqrt{mn}$ is a perfect square by definition (square of some integer).
+		}
+		
+		\problem{2}{
+		\item [30.]
+		Prove that if one solution for a quadratic equation of the form $x^2+bx+c=0$ is rational (where $b$ and $c$ are rational), then the other solution is also rational. \\
+		\textbf{Proof:} \\
+		Let $s$ and $r$ be the roots of the equation. \\
+		$\begin{aligned}[t]
+			x^2+bx+c ={} & (x-s)(x-r) && \text{factored form} \\
+			={} & x^2-xr-xs+rs && \text{distribute} \\
+			={} & x^2-(r+s)x+rs && \text{factor} \\
+		\end{aligned}$ \\
+		$b=-(r+s)$, $c=rs$ \\
+		$r,\,s \in \mathbb{Q}$ because subtraction and multiplication are closed under $\mathbb{Q}$
+		}
+		
+		\problem{2}{
+		\item [38.]
+		The ``proof'' does not prove that $\dfrac{a}{b}+\dfrac{c}{d}$ is rational.
+		
+		\item [39.]
+		The ``proof'' assumes $r+s \in \mathbb{Q}$ to prove $r+s \in \mathbb{Q}$.  
+		}
+		
+		\problem{3}{
+		\item [30.]
+		For all integers $a$ and $n$, if $a \mid n^2$ and $a \leq n$ then $a \mid n$. \\
+		False. \\
+		\textbf{Counterexample:} \\
+		Let $a=4$ and $n=6$. \\
+		$a \mid 36$ \\
+		$a \nmid 6$ \\
+		$\exists a,\, n \in \mathbb{Z},\, a \mid n^2 \not\Leftrightarrow a \mid n$
+		}
+		
+		\problem{3}{
+		\item [34.]
+		Is it possible to have 50 coins, made up of pennies, dimes, and quarters, that add up to \$3? Explain. \\
+		Not possible. \\
+		\textbf{Proof:} \\
+		Let $p$, $d$, $q \in \mathbb{Z}^+$ be the number of pennies, dimes, and quarters, respectively. \\
+		Assume there such a configuration is possible.
+		\begin{alignat*}{4}
+			&&     & p+ &     & d+ &     & q=50 \\
+			&& .01 & p+ & .10 & d+ & .25 & q=3 \\
+			&&     & p+ &  10 & d+ &  25 & q=300 \\
+			-&&     & p+ &     & d+ &     & q=50 \\
+			\hline
+			&&    &    &   9 & d+ &  24 & q=250
+		\end{alignat*}
+		$9d+24q=250$ \\
+		$3(3d+8q)=250$ \\
+		$3d+8q=\dfrac{250}{3}$ \\
+		$3d+8q \in \mathbb{Z}^+$ but $\dfrac{250}{3} \not\in \mathbb{Z}^+$. Addition and multiplication is closed on $\mathbb{Z}^+$ so there is no $d,\, q \in \mathbb{Z}^+$ to satisfy the constraints.
+		}	
+		
+		\problem{3}{
+		\item [35.]
+		Two athletes run a circular track at a steady pace so that the first completes one round in 8 minutes and the second in 10 minutes. If they both start from the same spot at 4 \textsc{p.m.},	when will be the first time they return to the start together? \\
+		At 4:40 \textsc{p.m.}
+		}
+		
+		\problem{3}{
+		\item [42.] \quad
+		\begin{enumerate}
+			\item [(c)] Without computing the value of $\left(20!\right)^2$ determine how many zeros are at the end of this number when it is written in decimal form. Justify your answer. \\
+			8 zeroes.\\
+			\textbf{Proof:} \\
+			Multiplying by $2 \times 5 = 10$ adds a trailing zero. \\
+			$20!$ has 4 factors that are multiples of 5 (20, 15, 10, 5). \\
+			$20!$ has 10 factors that are multiples of 2 (20, 18, \ldots, 4, 2). \\
+			Two of the multiple of 5 factors $20!$ are not multiples of 10 already. \\
+			Assign any two multiple of 2 factors of $20!$ to each of these. \\
+			$\begin{aligned}
+				\text{Using 2 and 4: } & 20! = 20 \times (15 \times 2) \times 10 \times (5 \times 4) \times \text{remaining factors} \\
+				& 20! = 20 \times 30 \times 10 \times 20 \times \text{remaining factors} \\
+				& 20! = 10^4 \times 12 \times \text{remaining factors}
+			\end{aligned}$ \\
+			Remaining factors do not have any multiples of 5, so multiplication by 12 does not produce any multiples of 10. \\
+			Four 10s can be factored out of $20!$, each one adds a trailing zero, so there are 4 trailing zeros in $20!$. \\
+			Let $a = 12 \times \text{remaining factors}$ \\ 
+			$\begin{aligned}
+				\left(20!\right)^2 &= \left(10^4 a\right)^2	 \\
+				&= 10^8a^2
+			\end{aligned}$ \\
+			$a^2$ doesn't produce any zeros for the same reason $a$ doesn't. \\
+			Eight 10s can be factored out of $20!$, therefore there are 8 trailing zeros.
+		\end{enumerate}
+		}
+		
+		\problem{3}{
+		\item [43.]
+		In a certain town 2/3 of the adult men are married to 3/5 of the adult women. Assume that all marriages are monogamous (no one is married to more than one other person). Also assume that there are at least 100 adult men in the town. What is the least possible number of adult men in the town? of adult women in the town? \\
+		108 men and 120 women. \\
+		\textbf{Proof:} \\
+		Let $100 \leq M \in \mathbb{Z}$ and $F \in \mathbb{N}$ be the number of men and women respectively. \\	
+		Let $M_{married}=\dfrac{2}{3}M \in \mathbb{Z}$ and $F_{married}=\dfrac{3}{5}F \in \mathbb{Z}$ \\
+		$M_{married}=F_{married} \Leftrightarrow \dfrac{2}{3}M = \dfrac{3}{5}F$ \\
+		$F=\dfrac{10}{9}M \Leftrightarrow M = \dfrac{9}{10}F$ \\
+		No fractional number of people so $9 \mid M$ and $10 \mid F$ \\
+		$M=\text{Smallest multiple of $9\geq100$}=108$ \\
+		$F=\dfrac{10}{9}M=\dfrac{10}{9}108=120$
+		}
+		
+		\problem{4}{
+		\item [30.] \quad
+		\begin{enumerate}
+			\item [(a)]
+			Use the quotient-remainder theorem with $d=3$ to prove that the product of any two consecutive integers has the form $3k$ or $3k+2$ for some integer $k$. \\
+			\textbf{Proof:} \\
+			$n=dq+r$ \\
+			$n=3q+r$ and $0 \leq r < 3$ \\
+			$n=3q+0$ or $n=3q+1$ or $n=3q+2$
+			\begin{multicols}{3}
+				$n=3q+0$ \\	
+				$n+1=3q+1$ \\
+				$\begin{aligned}
+						n(n+1) &=3q(3q+1) \\
+						&=3\underbrace{(9q^2+q)}_k
+				\end{aligned}$ \\
+				$n(n+1)=3k$
+				\columnbreak
+				\\
+				$n=3q+1$ \\	
+				$n+1=3q+2$ \\
+				$\begin{aligned}
+						n(n+1) &=(3q+1)(3q+2) \\
+						&=9q^2+9q+2 \\
+						&= 3\underbrace{(3q^2+3q)}_k+2
+				\end{aligned}$ \\
+				$n(n+1)=3k+2$
+				\columnbreak
+				\\
+				$n=3q+2$ \\	
+				$n+1=3q+3$ \\
+				$\begin{aligned}
+						n(n+1) &=(3q+2)(3q+3) \\
+						&=9q^2+15q+6 \\
+						&= 3\underbrace{(3q^2+5q+2)}_k
+				\end{aligned}$ \\
+				$n(n+1)=3k$
+			\end{multicols}
+			In all cases, the product of consecutive integers can be written in the form $3k$ or $3k+2$ for some integer $k$.
+		\end{enumerate}
+		}
+		
+		\problem{4}{
+		\item [31.] \quad
+		\begin{enumerate}
+			\item [(a)]
+			Prove that for all integers $m$ and $n$, $m+n$ and $m-n$ are either both odd or both even. \\
+			\textbf{Proof:} \\
+			Cases:
+			\begin{itemize}
+				\item $m$ is odd and $n$ is odd \\
+				$m=2j+1$ and $n=2k+1$ where $j,\, k \in \mathbb{Z}$
+				\begin{multicols}{2}
+					$\begin{aligned}
+						m+n &= (2j+1)+(2k+1) \\
+						&= 2j+2k+2 \\
+						&= 2\underbrace{(j+k+1)}_a \\
+						&= \text{$2a$ and $a \in \mathbb{Z}$ therefore even}
+					\end{aligned}$
+					\columnbreak
+					\\
+					$\begin{aligned}
+						m-n &= (2j+1)-(2k+1) \\
+						&= 2j-2k \\
+						&= 2\underbrace{(j-k)}_a \\
+						&= \text{$2a$ and $a \in \mathbb{Z}$ therefore even}
+					\end{aligned}$
+				\end{multicols}
+				Both expressions are even.
+				
+				\item $m$ is odd and $n$ is even \\
+				$m=2j+1$ and $n=2k$ where $j,\, k \in \mathbb{Z}$
+				\begin{multicols}{2}
+					$\begin{aligned}
+						m+n &= (2j+1)+(2k) \\
+						&= 2j+2k+1 \\
+						&= 2\underbrace{(j+k)}_a+1 \\
+						&= \text{$2a+1$ and $a \in \mathbb{Z}$ therefore odd}
+					\end{aligned}$
+					\columnbreak
+					\\
+					$\begin{aligned}
+						m-n &= (2j+1)-(2k) \\
+						&= 2j-2k+1 \\
+						&= 2\underbrace{(j-k)}_a+1 \\
+						&= \text{$2a+1$ and $a \in \mathbb{Z}$ therefore odd}
+					\end{aligned}$
+				\end{multicols}
+				Both expressions are odd.
+				
+				\item $m$ is even and $n$ is odd \\
+				$m=2j$ and $n=2k+1$ where $j,\, k \in \mathbb{Z}$
+				\begin{multicols}{2}
+					$\begin{aligned}
+						m+n &= (2j)+(2k+1) \\
+						&= 2j+2k+1 \\
+						&= \underbrace{(j+k)}_a+1 \\
+						&= \text{$2a+1$ and $a \in \mathbb{Z}$ therefore odd}
+					\end{aligned}$
+					\columnbreak
+					\\
+					$\begin{aligned}
+						m-n &= (2j)-(2k+1) \\
+						&= 2j-2k-1 \\
+						&= 2k-2j+1 \\
+						&= 2\underbrace{(j-k)}_a+1 \\
+						&= \text{$2a+1$ and $a \in \mathbb{Z}$ therefore odd}
+					\end{aligned}$
+				\end{multicols}
+				Both expressions are odd.
+				
+				\item $m$ is even and $n$ is even \\
+				$m=2j$ and $n=2k$ where $j,\, k \in \mathbb{Z}$
+				\begin{multicols}{2}
+					$\begin{aligned}
+						m+n &= (2j)+(2k) \\
+						&= 2\underbrace{(j+k)} \\
+						&= \text{$2a$ and $a \in \mathbb{Z}$ therefore even}
+					\end{aligned}$
+					\columnbreak
+					\\
+					$\begin{aligned}
+						m-n &= (2j)-(2k) \\
+						&= 2\underbrace{(j-k)}_a \\
+						&= \text{$2a$ and $a \in \mathbb{Z}$ therefore even}
+					\end{aligned}$
+				\end{multicols}
+				Both expressions are even.
+			\end{itemize}
+			In all cases, $m+n$ and $m-n$ have the same parity.
+		\end{enumerate}
+		}
+		
+		\problem{4}{
+		\item [40.]
+		For any integer $n$, $n(n^2-1)(n+2)$ is divisible by 4. \\
+		\textbf{Proof:} \\
+		Let $E=n(n^2-1)(n+2)=n(n-1)(n+1)(n+2)=(n-1)(n)(n+1)(n+2)$ \\
+		Let $a=n-1$ \\
+		$E=a(a+1)(a+2)(a+3)$ \\
+		Cases:
+		\begin{itemize}
+			\item $a \text{ mod } 4 = 0$ \\
+			$a=4q$ where $q \in \mathbb{Z}$ \\
+			$\begin{aligned}
+				E &=(4q)(4q+1)(4q+2)(4q+3) \\
+				&=4\underbrace{q(4q+1)(4q+2)(4q+3)}_{k}
+			\end{aligned}$ \\
+			$E=4k$ and k $\in \mathbb{Z}$ therefore $E$ is a multiple of 4.
+			
+			\item $a \text{ mod } 4 = 1$ \\
+			$a=4q+1$ where $q \in \mathbb{Z}$ \\
+			$\begin{aligned}
+				E &=(4q+1)(4q+2)(4q+3)\overbrace{(4q+4)}^{4(q+1)} \\
+				&=4\underbrace{(q+1)(4q+1)(4q+2)(4q+3)}_k \\
+			\end{aligned}$ \\
+			$E=4k$ and k $\in \mathbb{Z}$ therefore $E$ is a multiple of 4.
+			
+			\item $a \text{ mod } 4 = 2$ \\
+			$a=4q+2$ where $q \in \mathbb{Z}$ \\
+			$\begin{aligned}
+				E &=(4q+2)(4q+3)\overbrace{(4q+4)}^{4(q+1)}(4q+5) \\
+				&=4\underbrace{(q+1)(4q+2)(4q+3)(4q+5)}_k \\
+			\end{aligned}$ \\
+			$E=4k$ and k $\in \mathbb{Z}$ therefore $E$ is a multiple of 4.
+			
+			\item $a \text{ mod } 4 = 3$ \\
+			$a=4q+3$ where $q \in \mathbb{Z}$ \\
+			$\begin{aligned}
+				E &=(4q+3)\overbrace{(4q+4)}^{4(q+1)}(4q+5)(4q+6) \\
+				&=4\underbrace{(q+1)(4q+3)(4q+4)(4q+6)}_k \\
+			\end{aligned}$ \\
+			$E=4k$ and k $\in \mathbb{Z}$ therefore $E$ is a multiple of 4.
+		\end{itemize}
+		In all cases, $E=n(n^2-1)(n+2)$ is divisible by 4.
+		}
+		
+		\problem{5}{
+		\item [24.]
+		The reciprocal of any irrational number is irrational. \\
+		\textbf{Proof:} \\
+		Using $\mathbb{I}$ as the set of irrationals. \\
+		\textbf{Theorem A:}
+		\begin{itemize}
+			\item []
+			If $a \not= 0 \in \mathbb{Q}$ and $b \in \mathbb{I}$ then $ab \in \mathbb{I}$ \\
+			\textbf{Proof:} \\
+			Assume $ab \in \mathbb{Q}$. \\
+			$\dfrac{j}{k}b=\dfrac{m}{n}$ where $j$, $k$, $m$, $n \in \mathbb{Z}$ \\
+			$b=\dfrac{mk}{nj}$ \\
+			$mk,\, nj \in \mathbb{Z}$ \\
+			$b$ is a ratio of two integers, therefore $b \in \mathbb{Q}$ \\
+			Contradiction because premise states $b \not\in \mathbb{Q}$, therefore $b \in \mathbb{I}$
+		\end{itemize}
+		Let $a \in \mathbb{I}$ be an arbitrary irrational number. \\
+		Assume $\dfrac{1}{a}$ is rational. \\
+		$\exists x,\, y \not= 0 \in \mathbb{Z},\, \dfrac{1}{a}=\dfrac{x}{y}$ \\
+		$\dfrac{1}{a}=\dfrac{x}{y}$ \\
+		$y=ax$ \\
+		By Theorem A with $a$ and $x$, $y$ must be irrational. \\
+		Contradiction because $y \in \mathbb{Z}$ and $y \in \mathbb{I}$ therefore assumption is false. \\
+		Original statement is true.
+		}
+		
+		\problem{5}{
+		\item [31.] \quad
+		\begin{enumerate}
+			\item [(b)]
+			For all integers $n>1$, if $n$ is not prime, then there exists a prime number $p$ such that $p \leq \sqrt{n}$ and $n$ is divisible by $p$. \\
+			\textbf{Proof:} \\
+			Using $\mathbb{P}$ as the set of primes. \\
+			\textbf{Theorem 4.3.1:}
+			\begin{itemize}
+				\item [] For all integers $a$ and $b$, if $a$ and $b$ are positive and $a$ divides $b$, then $a < b$.
+			\end{itemize}
+			\textbf{Theorem 4.3.3:}
+			\begin{itemize}
+				\item [] For all integers $a$, $b$, and $c$, if $a$ divides $b$ and $b$ divides $c$, then $a$ divides $c$.
+			\end{itemize}
+			\textbf{Theorem 4.3.4:}
+			\begin{itemize}
+				\item [] Any integer $n>1$ is divisible by a prime number.
+			\end{itemize}
+			\textbf{Theorem A:}
+			\begin{itemize}
+				\item [] For all positive integers $n$, $r$, and $s$, if $rs<n$, then $r\leq\sqrt{n}$ or $s\leq\sqrt{n}$. \\
+				\textbf{Proof:} \\
+				Assume contrapositive. \\
+				For all positive integers $n$, $r$, and $s$, if $r>\sqrt{n}$ and $s>\sqrt{n}$, then $rs \geq n$. \\
+				Multiplying the inequalities $r>\sqrt{n}$ and $s>\sqrt{n}$ we get $rs>n$. \\
+				$rs>n \Rightarrow rs \geq n$ therefore contrapositive is true. \\
+				Contrapositive is true therefore original proposition is true.
+			\end{itemize}
+			$\forall n>1 \in \mathbb{Z},\, n \not\in \mathbb{P} \Rightarrow \exists p \in \mathbb{P} \text{ such that } p \leq \sqrt{n} \text{ and } p \mid n$ \\
+			$\begin{aligned}
+				& \exists p \in \mathbb{P} \text{ such that } p \leq \sqrt{n} \text{ and } p \mid n \\
+				\equiv & \underbrace{\exists p \in \mathbb{P} \text{ such that } p \leq \sqrt{n}}_A \text{ and } \underbrace{\exists p \in \mathbb{P} \text{ such that } p \mid n}_B
+			\end{aligned}$ \\
+			By Theorem 4.3.4, B is true for all $n$, so we only have to prove or disprove A. \\
+			$\forall n>1 \in \mathbb{Z},\, n \not\in \mathbb{P} \Rightarrow \exists p \in \mathbb{P} \text{ such that } p \leq \sqrt{n}$ \\
+%			$p \mid n \therefore \exists q \in \mathbb{Z}$ such that $pq=n$ \\
+			
+%			By Theorem 4.3.1 $p<n$. \\
+%			Let $q \in \mathbb{Z}^+$ be the other factor paired with $p$. \\
+%			 $pq=n$ \\
+		\end{enumerate}
+		}
+		
+		\problem{5}{
+		\item [33.]
+		Use the sieve of Eratosthenes to find all prime numbers less than 100. \\
+		Cross out multiples up to $\sqrt{n=100}=10$. \\
+		$\begin{array}{c c c c c c c c c c}
+			& 2 & 3 & \textcolor{red}{\cancel{4}} & 5 & \textcolor{red}{\cancel{6}} & 7 & \textcolor{red}{\cancel{8}} & \textcolor{red}{\cancel{9}} & \textcolor{red}{\cancel{10}} \\
+			11 & \textcolor{red}{\cancel{12}} & 13 & \textcolor{red}{\cancel{14}} & \textcolor{red}{\cancel{15}} & \textcolor{red}{\cancel{16}} & 17 & \textcolor{red}{\cancel{18}} & 19 & \textcolor{red}{\cancel{20}} \\
+			\textcolor{red}{\cancel{21}} & \textcolor{red}{\cancel{22}} & 23 & \textcolor{red}{\cancel{24}} & \textcolor{red}{\cancel{25}} & \textcolor{red}{\cancel{26}} & \textcolor{red}{\cancel{27}} & \textcolor{red}{\cancel{28}} & 29 & \textcolor{red}{\cancel{30}} \\
+			31 & \textcolor{red}{\cancel{32}} & \textcolor{red}{\cancel{33}} & \textcolor{red}{\cancel{34}} & \textcolor{red}{\cancel{35}} & \textcolor{red}{\cancel{36}} & 37 & \textcolor{red}{\cancel{38}} & \textcolor{red}{\cancel{39}} & \textcolor{red}{\cancel{40}} \\
+			41 & \textcolor{red}{\cancel{42}} & 43 & \textcolor{red}{\cancel{44}} & \textcolor{red}{\cancel{45}} & \textcolor{red}{\cancel{46}} & 47 & \textcolor{red}{\cancel{48}} & \textcolor{red}{\cancel{49}} & \textcolor{red}{\cancel{50}} \\
+			\textcolor{red}{\cancel{51}} & \textcolor{red}{\cancel{52}} & 53 & \textcolor{red}{\cancel{54}} & \textcolor{red}{\cancel{55}} & \textcolor{red}{\cancel{56}} & \textcolor{red}{\cancel{57}} & \textcolor{red}{\cancel{58}} & 59 & \textcolor{red}{\cancel{60}} \\
+			61 & \textcolor{red}{\cancel{62}} & \textcolor{red}{\cancel{63}} & \textcolor{red}{\cancel{64}} & \textcolor{red}{\cancel{65}} & \textcolor{red}{\cancel{66}} & 67 & \textcolor{red}{\cancel{68}} & \textcolor{red}{\cancel{69}} & \textcolor{red}{\cancel{70}} \\
+			71 & \textcolor{red}{\cancel{72}} & 73 & \textcolor{red}{\cancel{74}} & \textcolor{red}{\cancel{75}} & \textcolor{red}{\cancel{76}} & \textcolor{red}{\cancel{77}} & \textcolor{red}{\cancel{78}} & 79 & \textcolor{red}{\cancel{80}} \\
+			\textcolor{red}{\cancel{81}} & \textcolor{red}{\cancel{82}} & 83 & \textcolor{red}{\cancel{84}} & \textcolor{red}{\cancel{85}} & \textcolor{red}{\cancel{86}} & \textcolor{red}{\cancel{87}} & \textcolor{red}{\cancel{88}} & 89 & \textcolor{red}{\cancel{90}} \\
+			\textcolor{red}{\cancel{91}} & \textcolor{red}{\cancel{92}} & \textcolor{red}{\cancel{93}} & \textcolor{red}{\cancel{94}} & \textcolor{red}{\cancel{95}} & \textcolor{red}{\cancel{96}} & 97 & \textcolor{red}{\cancel{98}} & \textcolor{red}{\cancel{99}} & \textcolor{red}{\cancel{100}} \\
+		\end{array}$
+		}
+		
+		\item [] \textbf{Problem 16.}
+		\begin{enumerate}
+			\item [] Show that among any set of arbitrary (1 trillion + 1) natural numbers, one can find two numbers so that their difference is divisible by 1 trillion.
+		\end{enumerate}
+		
+	\end{enumerate}
+\end{document}
