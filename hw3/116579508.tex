@@ -61,13 +61,34 @@
 		Prove that if one solution for a quadratic equation of the form $x^2+bx+c=0$ is rational (where $b$ and $c$ are rational), then the other solution is also rational. \\
 		\textbf{Proof:} \\
 		Let $s$ and $r$ be the roots of the equation. \\
+%		Assume $s$ is rational and $r$ is irrational. \\
+%		$\begin{aligned}
+%			x^2+bx+c=0 &= (x-s)(x-r) & \text{factored form} \\
+%			&= \left(x-\dfrac{n}{m}\right)(x-r) & \text{$n,\, m \in \mathbb{Z}$} \\
+%		\end{aligned}$ \\
 		$\begin{aligned}[t]
 			x^2+bx+c ={} & (x-s)(x-r) && \text{factored form} \\
 			={} & x^2-xr-xs+rs && \text{distribute} \\
 			={} & x^2-(r+s)x+rs && \text{factor} \\
 		\end{aligned}$ \\
 		$b=-(r+s)$, $c=rs$ \\
-		$r,\,s \in \mathbb{Q}$ because subtraction and multiplication are closed under $\mathbb{Q}$
+%		$r,\,s \in \mathbb{Q}$ because subtraction and multiplication are closed under $\mathbb{Q}$
+		$b,\, c \in \mathbb{Q}$, therefore $-(r+s),\, rs \in \mathbb{Q}$. \\
+		Cases:
+		\begin{itemize} 
+			\item 
+			$r,s \in \mathbb{Q}$ \\
+			Proof done.
+			\item 
+			$r,s \not\in \mathbb{Q}$ \\
+			Irrelevant.
+			\item 
+			WLOG let $r \in \mathbb{Q}$ and $s \not\in \mathbb{Q}$. \\
+			$-(r+s) \in \mathbb{Q} \Rightarrow r+s \in \mathbb{Q}$ \\
+			By Theorem 4.5.3, $r+s \not\in \mathbb{Q}$. \\
+			Contradiction.
+		\end{itemize}
+		The only valid, relevant case shows that both $r$ and $s$ must be rational.
 		}
 		
 		\problem{2}{
@@ -86,7 +107,7 @@
 		Let $a=4$ and $n=6$. \\
 		$a \mid 36$ \\
 		$a \nmid 6$ \\
-		$\exists a,\, n \in \mathbb{Z},\, a \mid n^2 \not\Leftrightarrow a \mid n$
+%		$\exists a,\, n \in \mathbb{Z},\, a \mid n^2 \not\Leftrightarrow a \mid n$
 		}
 		
 		\problem{3}{
@@ -97,17 +118,18 @@
 		Let $p$, $d$, $q \in \mathbb{Z}^+$ be the number of pennies, dimes, and quarters, respectively. \\
 		Assume there such a configuration is possible.
 		\begin{alignat*}{4}
-			&&     & p+ &     & d+ &     & q=50 \\
-			&& .01 & p+ & .10 & d+ & .25 & q=3 \\
-			&&     & p+ &  10 & d+ &  25 & q=300 \\
-			-&&     & p+ &     & d+ &     & q=50 \\
+			 &&     & p+ &     & d+ &     & q=50 \\
+			 && .01 & p+ & .10 & d+ & .25 & q=3 \\
+			 \\
+			 &&     & p+ &  10 & d+ &  25 & q=300 \\
+			-(&&     & p+ &     & d+ &     & q=50) \\
 			\hline
 			&&    &    &   9 & d+ &  24 & q=250
 		\end{alignat*}
 		$9d+24q=250$ \\
 		$3(3d+8q)=250$ \\
 		$3d+8q=\dfrac{250}{3}$ \\
-		$3d+8q \in \mathbb{Z}^+$ but $\dfrac{250}{3} \not\in \mathbb{Z}^+$. Addition and multiplication is closed on $\mathbb{Z}^+$ so there is no $d,\, q \in \mathbb{Z}^+$ to satisfy the constraints.
+		$3d+8q \in \mathbb{Z}^+$ because addition and multiplication is closed on $\mathbb{Z}^+$, but $\dfrac{250}{3} \not\in \mathbb{Z}^+$. Contradiction, therefore no configuration exists.
 		}	
 		
 		\problem{3}{
@@ -125,7 +147,8 @@
 			Multiplying by $2 \times 5 = 10$ adds a trailing zero. \\
 			$20!$ has 4 factors that are multiples of 5 (20, 15, 10, 5). \\
 			$20!$ has 10 factors that are multiples of 2 (20, 18, \ldots, 4, 2). \\
-			Two of the multiple of 5 factors $20!$ are not multiples of 10 already. \\
+			Two of the multiple of 5 factors o $20!$ are multiples of 10 already (20, 10). \\
+			The other two are not (15, 5). \\
 			Assign any two multiple of 2 factors of $20!$ to each of these. \\
 			$\begin{aligned}
 				\text{Using 2 and 4: } & 20! = 20 \times (15 \times 2) \times 10 \times (5 \times 4) \times \text{remaining factors} \\
@@ -140,7 +163,7 @@
 				&= 10^8a^2
 			\end{aligned}$ \\
 			$a^2$ doesn't produce any zeros for the same reason $a$ doesn't. \\
-			Eight 10s can be factored out of $20!$, therefore there are 8 trailing zeros.
+			Eight 10s can be factored out of $(20!)^2$, therefore there are 8 trailing zeros.
 		\end{enumerate}
 		}
 		
@@ -383,26 +406,26 @@
 			\end{itemize}
 			\textbf{Theorem A:}
 			\begin{itemize}
-				\item [] For all positive integers $n$, $r$, and $s$, if $rs<n$, then $r\leq\sqrt{n}$ or $s\leq\sqrt{n}$. \\
+				\item [] For any composite integer $n=ab$, $a,\, b \in \mathbb{Z}$, if $a \leq b$ then $a \leq \sqrt{n}$ and $b \geq \sqrt{n}$. \\
 				\textbf{Proof:} \\
 				Assume contrapositive. \\
-				For all positive integers $n$, $r$, and $s$, if $r>\sqrt{n}$ and $s>\sqrt{n}$, then $rs \geq n$. \\
-				Multiplying the inequalities $r>\sqrt{n}$ and $s>\sqrt{n}$ we get $rs>n$. \\
-				$rs>n \Rightarrow rs \geq n$ therefore contrapositive is true. \\
-				Contrapositive is true therefore original proposition is true.
+				For any composite integer $n=ab$, $a,\, b \in \mathbb{Z}$, if $a>\sqrt{n}$ or $b<\sqrt{n}$ then $a>b$ \\
+				$a>\sqrt{n}>b \Rightarrow a>b$ \\
+				Contrapositive is true, therefore original proposition is true.
 			\end{itemize}
-			$\forall n>1 \in \mathbb{Z},\, n \not\in \mathbb{P} \Rightarrow \exists p \in \mathbb{P} \text{ such that } p \leq \sqrt{n} \text{ and } p \mid n$ \\
-			$\begin{aligned}
-				& \exists p \in \mathbb{P} \text{ such that } p \leq \sqrt{n} \text{ and } p \mid n \\
-				\equiv & \underbrace{\exists p \in \mathbb{P} \text{ such that } p \leq \sqrt{n}}_A \text{ and } \underbrace{\exists p \in \mathbb{P} \text{ such that } p \mid n}_B
-			\end{aligned}$ \\
-			By Theorem 4.3.4, B is true for all $n$, so we only have to prove or disprove A. \\
-			$\forall n>1 \in \mathbb{Z},\, n \not\in \mathbb{P} \Rightarrow \exists p \in \mathbb{P} \text{ such that } p \leq \sqrt{n}$ \\
-%			$p \mid n \therefore \exists q \in \mathbb{Z}$ such that $pq=n$ \\
-			
-%			By Theorem 4.3.1 $p<n$. \\
-%			Let $q \in \mathbb{Z}^+$ be the other factor paired with $p$. \\
-%			 $pq=n$ \\
+			By definition of composite number, $n=pq$ where $q \in \mathbb{Z}$. \\
+			Cases:
+			\begin{itemize}
+				\item $p \leq q$ \\
+				By Theorem A, $p\leq\sqrt{n}$ and proposition is true.
+				
+				\item $p>q$ \\
+				By Theorem A, $q\leq\sqrt{n}$. \\
+				By Theorem 4.3.4, let $p_2$ be a prime factor of $q$. \\
+				By Theorem 4.3.1, $p_2<q$. \\
+				By Theorem 4.3.3, because $p_2 \mid q$ and $q \mid n$, $p_2 \mid n$. \\
+				$p_2<q\leq\sqrt{n} \Rightarrow p_2\leq\sqrt{n}$ and proposition is true. \\
+			\end{itemize}
 		\end{enumerate}
 		}
 		
@@ -413,7 +436,7 @@
 		$\begin{array}{c c c c c c c c c c}
 			& 2 & 3 & \textcolor{red}{\cancel{4}} & 5 & \textcolor{red}{\cancel{6}} & 7 & \textcolor{red}{\cancel{8}} & \textcolor{red}{\cancel{9}} & \textcolor{red}{\cancel{10}} \\
 			11 & \textcolor{red}{\cancel{12}} & 13 & \textcolor{red}{\cancel{14}} & \textcolor{red}{\cancel{15}} & \textcolor{red}{\cancel{16}} & 17 & \textcolor{red}{\cancel{18}} & 19 & \textcolor{red}{\cancel{20}} \\
-			\textcolor{red}{\cancel{21}} & \textcolor{red}{\cancel{22}} & 23 & \textcolor{red}{\cancel{24}} & \textcolor{red}{\cancel{25}} & \textcolor{red}{\cancel{26}} & \textcolor{red}{\cancel{27}} & \textcolor{red}{\cancel{28}} & 29 & \textcolor{red}{\cancel{30}} \\
+			\textcolor{red}{\cancel{21}} & \textcolor{red}{\cancel{22}} & 23 & \textcolor{red}{\cancel{24}} & \textcolor{red}{\cancel{25}} & \textcolor{red}{\cancel{26}} & \textcolor{red}{\cancel{27}} & \textcolor{red}{\cancel{28}} & 29 & \textcolor{red}{\cancel{30}} \\	
 			31 & \textcolor{red}{\cancel{32}} & \textcolor{red}{\cancel{33}} & \textcolor{red}{\cancel{34}} & \textcolor{red}{\cancel{35}} & \textcolor{red}{\cancel{36}} & 37 & \textcolor{red}{\cancel{38}} & \textcolor{red}{\cancel{39}} & \textcolor{red}{\cancel{40}} \\
 			41 & \textcolor{red}{\cancel{42}} & 43 & \textcolor{red}{\cancel{44}} & \textcolor{red}{\cancel{45}} & \textcolor{red}{\cancel{46}} & 47 & \textcolor{red}{\cancel{48}} & \textcolor{red}{\cancel{49}} & \textcolor{red}{\cancel{50}} \\
 			\textcolor{red}{\cancel{51}} & \textcolor{red}{\cancel{52}} & 53 & \textcolor{red}{\cancel{54}} & \textcolor{red}{\cancel{55}} & \textcolor{red}{\cancel{56}} & \textcolor{red}{\cancel{57}} & \textcolor{red}{\cancel{58}} & 59 & \textcolor{red}{\cancel{60}} \\
@@ -426,7 +449,16 @@
 		
 		\item [] \textbf{Problem 16.}
 		\begin{enumerate}
-			\item [] Show that among any set of arbitrary (1 trillion + 1) natural numbers, one can find two numbers so that their difference is divisible by 1 trillion.
+			\item [] Show that among any set of arbitrary (1 trillion + 1) natural numbers, one can find two numbers so that their difference is divisible by 1 trillion. \\
+			\textbf{Proof:} \\
+			Let $\mathbb{S}$ be the set of $10^{12}+1$ arbitrary natural numbers. \\
+			Map every element $e \in \mathbb{S}$ under $e$ \text{mod} $10^{12}$ and call the set $\mathbb{T}$. \\
+			By quotient remainder theorem, $\forall e \in \mathbb{T},\, 0 \leq e < 10^{12}$ \\
+			Because $|\mathbb{S}|=10^{12}+1$ and $|\mathbb{T}|=10^{12}$, by the pigeonhole principle, there exists two elements $a,\, b \in \mathbb{S}$ that map to the same element $m \in \mathbb{T}$. \\
+			$m=a\text{ mod }10^{12} = b\text{ mod }10^{12}$ \\
+			$a=10^{12}j+m$ where $j \in \mathbb{Z}$ and $b=10^{12}k+m$ where $k \in \mathbb{Z}$. \\
+			$a-b = (10^{12}j+m)-(10^{12}k+m)=10^{12}(j-k)$ \\
+			The difference $a-b$ is a multiple of $10^{12}$. \\
 		\end{enumerate}
 		
 	\end{enumerate}
