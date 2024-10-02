@@ -22,10 +22,10 @@
 	}
 	\newcommand{\problem}[2]{
 		\rawproblem{
-			Exercise Set 4.#1
-			\begin{enumerate}
-				#2
-			\end{enumerate}
+		Exercise Set 4.#1
+		\begin{enumerate}
+			#2
+		\end{enumerate}
 		}
 	}
 	
@@ -43,7 +43,7 @@
 	\textbf{Counterexample:} \\
 	Let $m=3$. \\
 	$3^2-4=5$ \\
-	5 is not composite.
+	5 isn't composite.
 	
 	\item [53.]
 	For all integers $n$, $n^2-n+11$ is a prime number. \\
@@ -66,8 +66,9 @@
 		={} & (a+b)^2 && \text{factoring} \\
 		={} & c^2 && \text{let $c=a+b$}
 	\end{aligned}$ \\
-	$c \in \mathbb{Z}$ because addition is closed under $\mathbb{Z}$ \\
-	$m+n+2\sqrt{mn}$ is a perfect square by definition (square of some integer).
+	$m+n+2\sqrt{mn}=c^2$ where $c \in \mathbb{Z}$, therefore proposition is true
+%	$c \in \mathbb{Z}$ because addition is closed under $\mathbb{Z}$. \\
+%	$m+n+2\sqrt{mn}$ is a perfect square.
 	}
 	
 	\problem{2}{
@@ -99,7 +100,7 @@
 		Contradiction. \\
 		\hline
 	\end{tabular} \\
-	The only valid, relevant case shows that both $r$ and $s$ must be rational.
+	The only valid, relevant case shows that both roots must be rational, therefore proposition is true.
 	}
 	
 	\problem{2}{
@@ -128,12 +129,12 @@
 	Let $p$, $d$, $q \in \mathbb{Z}^+$ be the number of pennies, dimes, and quarters, respectively. \\
 	Assume there such a configuration is possible. \\
 	$\begin{aligned}
-  &&    p+ &&    d+ &&    q & =50 \\
-  && .01p+ && .10d+ && .25q & =3 \\
+		&& p+ && d+ && q & =50 \\
+		&& .01p+ && .10d+ && .25q & =3 \\
 		\\
-  &&    p+ &&  10d+ &&  25q & =300 \\
-  &&  -(p+ &&    d+ &&    q & =50) \\
-	 = &&       &&   9d+ &&  24q & =250 \\
+		&& p+ && 10d+ && 25q & =300 \\
+		&& -(p+ && d+ && q & =50) \\
+		= && && 9d+ && 24q & =250 \\
 	\end{aligned}$ \\
 	$3(3d+8q)=250$ \\
 	$3d+8q=\dfrac{250}{3}$ \\
@@ -182,10 +183,10 @@
 	108 men and 120 women. \\
 	\textbf{Proof:} \\
 	Let $M \geq 100 \in \mathbb{Z}$ and $F \in \mathbb{N}$ be the number of men and women respectively. \\	
-	Let $M_{married}=\dfrac{2}{3}M \in \mathbb{Z}$ and $F_{married}=\dfrac{3}{5}F \in \mathbb{Z}$ \\
+	Let $M_{married}=\dfrac{2}{3}M \in \mathbb{Z}$ and $F_{married}=\dfrac{3}{5}F \in \mathbb{Z}$. \\
 	$M_{married}=F_{married} \Rightarrow \dfrac{2}{3}M = \dfrac{3}{5}F$ \\
 	$F=\dfrac{10}{9}M$ and $M = \dfrac{9}{10}F$ \\
-	No fractional number of people so $9 \mid M$ and $10 \mid F$ \\
+	No fractional number of people so $9 \mid M$ and $10 \mid F$. \\
 	$F>M$ and we want to minimize adults, so find the minimal $M$. \\
 	$M=$ ((Smallest multiple of $9)\geq100)=108$ \\
 	$F=\dfrac{10}{9}M=\dfrac{10}{9}108=120$
