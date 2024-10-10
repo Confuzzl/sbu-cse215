@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.28)  10 OCT 2024 14:33
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (MiKTeX 24.4) (preloaded format=pdflatex 2024.8.28)  10 OCT 2024 14:58
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -405,120 +405,122 @@ Underfull \hbox (badness 10000) in paragraph at lines 364--364
  []
 
 
-Overfull \hbox (17.77782pt too wide) in paragraph at lines 364--365
+Overfull \hbox (17.77782pt too wide) in paragraph at lines 364--367
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 364--365
+Underfull \hbox (badness 10000) in paragraph at lines 364--367
 
  []
 
 
 
 [8]
-Underfull \hbox (badness 10000) in paragraph at lines 365--365
-
- []
-
-
-Overfull \hbox (17.77782pt too wide) in paragraph at lines 365--366
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 365--366
-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 366--366
-
- []
-
-
-Overfull \hbox (17.77782pt too wide) in paragraph at lines 366--367
-[][]
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 366--367
-
- []
-
-
 Underfull \hbox (badness 10000) in paragraph at lines 367--367
 
  []
 
 
-Overfull \hbox (17.77782pt too wide) in paragraph at lines 367--377
+Overfull \hbox (17.77782pt too wide) in paragraph at lines 367--372
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 367--377
+Underfull \hbox (badness 10000) in paragraph at lines 367--372
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 377--377
+Underfull \hbox (badness 10000) in paragraph at lines 372--372
 
  []
 
 
-Overfull \hbox (17.77782pt too wide) in paragraph at lines 377--378
+Overfull \hbox (17.77782pt too wide) in paragraph at lines 372--376
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 372--376
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--376
+
+ []
+
+
+Overfull \hbox (17.77782pt too wide) in paragraph at lines 376--386
+[][]
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 376--386
+
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 386--386
+
+ []
+
+
+Overfull \hbox (17.77782pt too wide) in paragraph at lines 386--387
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 382--382
+Underfull \hbox (badness 10000) in paragraph at lines 391--391
 
  []
 
 
-Overfull \hbox (17.77782pt too wide) in paragraph at lines 382--383
+Overfull \hbox (17.77782pt too wide) in paragraph at lines 391--392
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 382--383
+Underfull \hbox (badness 10000) in paragraph at lines 391--392
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 383--383
+
+[9]
+Underfull \hbox (badness 10000) in paragraph at lines 392--392
 
  []
 
 
-Overfull \hbox (17.77782pt too wide) in paragraph at lines 383--384
+Overfull \hbox (17.77782pt too wide) in paragraph at lines 392--393
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 383--384
+Underfull \hbox (badness 10000) in paragraph at lines 392--393
 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--384
+Underfull \hbox (badness 10000) in paragraph at lines 393--393
 
  []
 
 
-Overfull \hbox (17.77782pt too wide) in paragraph at lines 384--385
+Overfull \hbox (17.77782pt too wide) in paragraph at lines 393--394
 [][]
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 384--385
+Underfull \hbox (badness 10000) in paragraph at lines 393--394
 
  []
 
 
 
-[9] (116579508.aux)
+[10] (116579508.aux)
  ***********
 LaTeX2e <2024-06-01> patch level 2
 L3 programming layer <2024-07-20>
@@ -531,7 +533,7 @@ Here is how much of TeX's memory you used:
  25216 multiletter control sequences out of 15000+600000
  560076 words of font info for 45 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 57i,22n,65p,288b,395s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 57i,22n,65p,340b,395s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/fuzzl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/
 cmbx10.pfb><C:/Users/fuzzl/AppData/Local/Programs/MiKTeX/fonts/type1/public/ams
 fonts/cm/cmex10.pfb><C:/Users/fuzzl/AppData/Local/Programs/MiKTeX/fonts/type1/p
@@ -543,9 +545,9 @@ al/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy10.pfb><C:/Users/fuzzl/Ap
 pData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/cm/cmsy7.pfb><C:/Users/
 fuzzl/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msbm10.
 pfb>
-Output written on 116579508.pdf (9 pages, 126140 bytes).
+Output written on 116579508.pdf (10 pages, 128657 bytes).
 PDF statistics:
- 77 PDF objects out of 1000 (max. 8388607)
+ 80 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)
  1 words of extra memory for PDF output out of 10000 (max. 10000000)
 
