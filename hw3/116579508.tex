@@ -458,8 +458,8 @@
 	Show that among any set of arbitrary (1 trillion + 1) natural numbers, one can find two numbers so that their difference is divisible by 1 trillion. \\
 	\textbf{Proof:} \\
 	Let $\mathbb{S} \subset \mathbb{N}$ be the set of $10^{12}+1$ arbitrary natural numbers. \\
-	Map every element $e \in \mathbb{S}$ under $e$ \text{mod} $10^{12}$ and call the set $\mathbb{T}$. \\
-	The maximum cardinality of $\mathbb{T}$ is $10^{12}$. By quotient remainder theorem, remainders of division by $10^{12}$ are in the range $\left[0,10^{12}\right)$. The largest $\mathbb{T}$ possible contains all these remainders. \\
+	Let $\mathbb{T}$ be the set created by mapping every element $e \in \mathbb{S}$ under $e$ \text{mod} $10^{12}$. \\
+	The maximum cardinality of $\mathbb{T}$ is $10^{12}$. By the quotient remainder theorem, remainders of division by $10^{12}$ are integers in the range $\left[0,10^{12}\right)$. The largest $\mathbb{T}$ possible contains all these remainders. \\
 	Because $|\mathbb{S}|=10^{12}+1 > \text{max}(|\mathbb{T}|$)$=10^{12}$, by the pigeonhole principle, there exists two elements $a,\, b \in \mathbb{S}$ that map to the same element $m \in \mathbb{T}$. \\
 	$m=a\text{ mod }10^{12} = b\text{ mod }10^{12}$ \\
 	By the quotient remainder theorem, $a=10^{12}j+m$ and $b=10^{12}k+m$ where $j,\, k \in \mathbb{Z}$. \\
