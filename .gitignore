@@ -1,4 +1,4 @@
-*.aux
-*.synctex.gz
-*.log
-115679508.pdf
+**/*.aux
+**/*.synctex.gz
+**/*.log
+**/115679508.pdf
