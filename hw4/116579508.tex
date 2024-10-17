@@ -4,10 +4,16 @@
 \usepackage{amssymb}
 \usepackage{enumerate}
 \usepackage[letterpaper, margin=1in]{geometry}
-%\usepackage{xcolor, colortbl}
+\usepackage{xcolor, colortbl}
 %\usepackage{cancel}
-%\usepackage{tabularx}
+\usepackage{tabularx}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{float}
 
+\graphicspath{{./assets/}}
+
+\setlength{\extrarowheight}{3pt}
 
 \begin{document}
 	\newcommand{\chunk}[1]{
@@ -38,6 +44,8 @@
 	\newcommand{\ql}{\stackrel{?}{<}}
 	\newcommand{\qgeq}{\stackrel{?}{\geq}}
 	\newcommand{\qleq}{\stackrel{?}{\leq}}
+	
+	\newcommand{\case}[2]{\cellcolor{yellow!25}\textbf{Case #1:} #2}
 	
 	\noindent \textbf{Problem 1.}
 	\begin{enumerate}[(a)]
@@ -132,7 +140,7 @@
 				1+3(k+1) &\qleq 4^{k+1} \\
 				4+3k &\qleq 4^{k+1} \\
 				(1+3k)+3 &\qleq 4^{k+1} \\
-				4^k+3 &\qleq 4^{k+1} & \text{Because $P(k)$ is true.}\\
+				4^k+3 &\qleq 4^{k+1} & \text{$P(k)$ is true}\\
 				3 &\qleq 4^{k+1}-4^k \\
 				3 &\qleq 4^k(4-1) \\
 				3 &\qleq 3\cdot4^k \\
@@ -154,7 +162,7 @@
 			$\begin{aligned}[t]
 				\sqrt{k+1} &\ql \Sum{i=1}{k+1}\dfrac{1}{\sqrt{i}} \\
 				\sqrt{k+1} &\ql \Sum{i=1}{k}\dfrac{1}{\sqrt{i}}+\dfrac{1}{\sqrt{k+1}} \\
-				\sqrt{k+1} &\ql \sqrt{k}+\dfrac{1}{\sqrt{k+1}} & \text{Because $P(k)$ is true.} \\
+				\sqrt{k+1} &\ql \sqrt{k}+\dfrac{1}{\sqrt{k+1}} & \text{$P(k)$ is true} \\
 				\dfrac{k+1}{\sqrt{k+1}} &\ql \dfrac{\sqrt{k}\sqrt{k+1}+1}{\sqrt{k+1}} \\
 				k+1 &\ql \sqrt{k}\sqrt{k+1}+1 \\
 				\sqrt{k}\sqrt{k} &\ql \sqrt{k}\sqrt{k+1} \\
@@ -188,14 +196,15 @@
 			\end{aligned}$ \\
 			\begin{tabular}{|l|}
 				\hline
-				Case 1: $x=0$ \\
+				\case{1}{$x=0$} \\
+%				Case 1: $x=0$ \\
 				\hline
 				Prove $0 \leq (1+0)^k\cdot0$: \\
 				$0 \leq (1+0)^k\cdot0$ \\
 				$0 \leq 0$ \\
 				Proof done. \\
 				\hline
-				Case 2: $x>0$ \\
+				\case{2}{$x>0$} \\
 				\hline
 				Prove $x\leq(1+x)^kx$: \\
 				\\
@@ -219,7 +228,7 @@
 			\end{tabular}
 			\begin{tabular}{|l|}
 				\hline
-				Case 3: $-1<x<0$ \\
+				\case{3}{$-1<x<0$} \\
 				\hline
 				Prove $x\leq(1+x)^kx$: \\
 				\\
@@ -252,13 +261,13 @@
 			Let property $P(n)$ be $\begin{cases}
 				0=\dfrac{n(n-1)}{2} & n=0,\, n=1 \\
 				\dfrac{n!}{2(n-2)!}=\dfrac{n(n-1)}{2} & n\geq2 \\
-			\end{cases}$ for non negative integers $n$. \\
+			\end{cases}$. \\
 			\textbf{Basis:} \\
 			$P(0):0=\left(\dfrac{0(0-1)}{2}=0\right)$ is true. \\
 			$P(1):0=\left(\dfrac{1(1-1)}{2}=0\right)$ is true. \\
 			$P(2): \left(\dfrac{2!}{2(2-2)!}=\dfrac{2}{2\cdot1}=1\right)=\left(\dfrac{2(2-1)}{2}=1\right)$ is true. \\
 			\textbf{Inductive hypothesis:} \\
-			Assume $P(k): \dfrac{k!}{2(k-2)!}=\dfrac{k(k-1)}{2}$ for $k\geq0\in\mathbb{Z}$ to be true. \\
+			Assume $P(k): \dfrac{k!}{2(k-2)!}=\dfrac{k(k-1)}{2}$ for $k\geq2\in\mathbb{Z}$ to be true. \\
 			Prove $P(k+1): \dfrac{(k+1)!}{2((k+1)-2)!}=\dfrac{(k+1)((k+1)-1)}{2}$: \\
 			$\begin{aligned}[t]
 				\dfrac{(k+1)!}{2((k+1)-2)!} &\qeq \dfrac{(k+1)((k+1)-1)}{2} \\
@@ -322,11 +331,11 @@
 				$P(2): (h_2=3)\leq(3^2=9)$ is true. \\
 				\textbf{Inductive hypothesis:} \\
 				Let $k\geq2$. \\
-				Assume $P(i): h_i=h_{i-1}+h_{i-2}+h_{i-3}\leq3^i$ for $0\leq i\leq k$ and $i\in\mathbb{Z}$. \\
+				Assume $P(i): h_i=h_{i-1}+h_{i-2}+h_{i-3}\leq3^i$ for $0\leq i\leq k$ and $i\in\mathbb{Z}$ is true. \\
 				Prove $P(k+1): h_{k+1}=h_k+h_{k-1}+h_{k-2}\leq3^{k+1}$: \\
 				$h_{k+1}\begin{aligned}[t]
 					= & h_k+h_{k-1}+h_{k-2} \\
-					\leq & 3^{k}+3^{k-1}+3^{k-2} & \text{Because $P(i)$ is true.}\\
+					\leq & 3^{k}+3^{k-1}+3^{k-2} & \text{$P(i)$ is true}\\
 					\leq & 3^{k-2}\left(3^2+3+1\right)\\
 					\leq & 13\cdot3^{k-2} & \leq \left(3^3\cdot3^{k-2}=3^{k+1}\right) \\
 					\leq & 3^{k+1} \\
@@ -348,7 +357,7 @@
 					= & h_k+h_{k-1}+h_{k-2} \\
 					\leq & s^k+s^{k-1}+s^{k-2} \\
 					\leq & s^{k-2}\left(s^2+s+1\right) \\
-					\leq & s^{k-2}s^3 & \text{Because $s^2+s+1\leq s^3$.} \\
+					\leq & s^{k-2}s^3 & \text{$s^2+s+1\leq s^3$} \\
 					\leq & s^{k+1} \\
 				\end{aligned}$ \\
 				Basis and inductive hypothesis proven, therefore original statement is true. \\
@@ -362,7 +371,7 @@
 			$P(2): 3\leq\dfrac{49}{16}$ is true. \\
 			\textbf{Inductive hypothesis:} \\
 			Let $k\geq2$. \\
-			Assume $P(i): a_i=a_{i-1}+a_{i-2}\leq\left(\dfrac{7}{4}\right)^i$ for $1\leq i\leq k$ and $i\in\mathbb{Z}$. \\
+			Assume $P(i): a_i=a_{i-1}+a_{i-2}\leq\left(\dfrac{7}{4}\right)^i$ for $1\leq i\leq k$ and $i\in\mathbb{Z}$ is true. \\
 			Prove $P(k+1): a_k+a_{k-1}\leq\left(\dfrac{7}{4}\right)^i$: \\
 			$a_{k+1}\begin{aligned}[t]
 				=  & a_k+a_{k-1} \\
@@ -373,34 +382,316 @@
 			\end{aligned}$ \\
 			Basis and inductive hypothesis proven, therefore original statement is true. \\
 		}
-		\set{4}{25(b)}{
+		\set{4}{25(b)}{	
 			Use mathematical induction to prove that for all integers $n\geq1$, given any set of $2^n$ people arranged in a circle and numbered consecutively 1 through $2^n$, if one starts from person \#1 and goes repeatedly around the circle successively eliminating every second person, eventually only person \#1 will remain. \\
+			Let property $P(n)$ be $2^n$ people eliminated as given above will eventually leave only person \#1. \\
+			Eliminating halves the number of people, so after one round there are $2^n/2=2^{n-1}$ people. \\
+			\textbf{Basis:} \\
+			$P(1): $ \\
+			\begin{tikzpicture}[baseline={(current bounding box.north)}, font=\scriptsize]
+				\draw[align=center]
+				(0,0) circle (0.75) node {Round 1}
+				(0,1) node {1}
+				(0,-1) node {2}
+				;
+			\end{tikzpicture}
+			\begin{tikzpicture}[baseline={(current bounding box.north)}, font=\scriptsize]
+				\draw[align=center]
+				(0,0) circle (0.75) node {Round 2}
+				(0,1) node {1}
+				;
+			\end{tikzpicture} \\
+			is true. \\
+			\textbf{Inductive hypothesis:} \\
+			Assume $P(k): 2^k$ people eliminated as given above will eventually leave only person \#1 for $k\geq1$ is true. \\
+			Prove $P(k+1): 2^{k+1}$ people eliminated as given above will eventually leave only person \#1: \\
+			After round 1 there are $2^k$ people. \\
+			Because $P(k)$ is true, by round 2, when there are $2^k$ people left, carrying out eliminations as given above must leave only person \#1. \\
+			Basis and inductive hypothesis proven, therefore original statement is true. \\
 		}
 		\set{4}{30}{
-			It is a fact that every integer $n>1$ can be written in the form  \\
+			It is a fact that every integer $n\geq1$ can be written in the form  \\
 			$c_r\cdot3^r+c_{r-1}\cdot3^{r-1}+\dots+c_2\cdot3^2+c_1\cdot3+c_0$, \\
 			where $c_r=1$ or 2 and $c_i=0,1,$ or 2 for all integers $i=0,1,2,\dots,r-1$. Sketch a proof of this fact. \\
+			Let property $P(n)$ be the the property given above. \\
+			$P(n)$ says that any positive integer can be written as the sum of multiples of powers of 3. \\
+			\textbf{Basis:} \\
+			$P(1): (c_{r=0}=1)\cdot3^{r=0}=1$ is true. \\
+			$P(2): (c_{r=0}=1)\cdot3^{r=0}+(c_0=1)=2$ is true. \\
+			$P(3): (c_{r=1}=1)\cdot3^{r=1}=3$ is true. \\
+			$P(4): (c_{r=1}=1)\cdot3^{r=1}+(c_{r=0}=1)\cdot3^{r=0}=4$ is true. \\
+			\textbf{Inductive hypothesis:} \\
+			Let $k\geq4$. \\
+			Assume $P(i)$ for $1\leq i\leq k$ and $i\in\mathbb{Z}$ to be true. \\
+			Prove $P(k+1)$ can be written as the sum of multiples of powers of 3: \\
+			\begin{tabular}{|l|}
+				\hline
+				\case{1}{$k+1$ mod $3=0$} \\
+				\hline
+				$1\leq (k+1)/3\leq k$ \\
+				$2\leq k \leq 3k-1$ \\
+				$k\geq 2$ is true. \\
+				$\dfrac{k+1}{3}=c_r\cdot3^r+c_{r-1}\cdot3^{r-1}+\dots+c_2\cdot3^2+c_1\cdot3+c_0$ \\
+				$k+1=c_r\cdot3^{r+1}+c_{r-1}\cdot3^r+\dots+c_2\cdot3^3+c_1\cdot3^2+c_0\cdot3$ \\
+				$k+1$ is the sum of multiples of powers of 3. \\
+				Proof done. \\
+				\hline
+				\case{2}{$k+1$ mod $3=1$} \\
+				\hline
+				$k$ mod $3=0$ \\
+				$1\leq k/3\leq k$ \\
+				$3\leq k\leq 3k$ \\
+				$k\geq3$ is true. \\
+				$\dfrac{k}{3}=c_r\cdot3^r+c_{r-1}\cdot3^{r-1}+\dots+c_2\cdot3^2+c_1\cdot3+c_0$ \\
+				$k=c_r\cdot3^{r+1}+c_{r-1}\cdot3^r+\dots+c_2\cdot3^3+c_1\cdot3^2+c_0\cdot3$ \\
+				$k+1=c_r\cdot3^{r+1}+c_{r-1}\cdot3^r+\dots+c_2\cdot3^3+c_1\cdot3^2+c_0\cdot3+(1\cdot3^0=1)$ \\
+				$k+1$ is the sum of multiples of powers of 3. \\
+				Proof done. \\
+				\hline
+				\case{3}{$k+1$ mod $3=2$} \\
+				\hline
+				$k-1$ mod $3=0$ \\
+				$1\leq (k-1)/3\leq k$ \\
+				$4\leq k \leq 3k+1$ \\
+				$k\geq4$ is true. \\
+				$\dfrac{k-1}{3}=c_r\cdot3^r+c_{r-1}\cdot3^{r-1}+\dots+c_2\cdot3^2+c_1\cdot3+c_0$ \\
+				$k-1=c_r\cdot3^{r+1}+c_{r-1}\cdot3^r+\dots+c_2\cdot3^3+c_1\cdot3^2+c_0\cdot3$ \\
+				$k+1=c_r\cdot3^{r+1}+c_{r-1}\cdot3^r+\dots+c_2\cdot3^3+c_1\cdot3^2+c_0\cdot3+(2\cdot3^0=2)$ \\
+				$k+1$ is the sum of multiples of powers of 3. \\
+				Proof done. \\
+				\hline
+			\end{tabular} \\
+			$P(k+1)$ is true in all cases. \\
+			Basis and inductive hypothesis proven, therefore original statement is true. \\
 		}
 		\set{5}{30}{
 			$F_0,F_1,F_2,\dots$ is the Fibonacci sequence. \\
 			Use mathematical induction to prove that for all integers $n\geq0$, $F_{n+2}F_n-F^2_{n+1}=(-1)^n$ \\
+			Let property $P(n)$ be $F_{n+2}F_n-F^2_{n+1}=(-1)^n$ for $n\geq0\in\mathbb{Z}$. \\
+			\textbf{Basis:} \\
+			$F_0=1$, $F_1=1$, $F_2=2$ \\
+			$P(0): (F_2F_0-F^2_1=2\cdot1-1^2=1)=((-1)^0=1)$ is true. \\
+			\textbf{Inductive hypothesis:} \\
+			Assume $P(k): F_{k+2}F_k-F^2_{k+1}=(-1)^k$ for $k\geq0\in\mathbb{Z}$ to be true. \\
+			Prove $P(k+1): F_{k+3}F_{k+1}-F^2_{k+2}=(-1)^{k+1}$: \\
+			$\begin{aligned}[t]
+				F_{k+3}F_{k+1}-F^2_{k+2} &= (F_{k+2}+F_{k+1})F_{k+1}-(F_{k+1}+F_{k})^2 \\
+				&= (2F_{k+1}+F_k)F_{k+1}-(F^2_{k+1}+2F_{k+1}F_k+F^2_{k}) \\
+				&= 2F^2_{k+1}+F_kF_{k+1}-(F^2_{k+1}+2F_{k+1}F_k+F^2_{k}) \\
+				&= F^2_{k+1}-F_kF_{k+1}-F^2_k \\
+				&= F^2_{k+1}-F_k(F_{k+1}+F_k) \\
+				&= F^2_{k+1}-F_kF_{k+2}=-(F_{k+2}F_k-F^2_{k+1})=-(-1)^k=(-1)^{k+1}\\
+			\end{aligned}$ \\
+			Basis and inductive hypothesis proven, therefore original statement is true. \\
 		}
 		\chunk{
 			Let $f$ be a function on whole numbers satisfying \\
 			$f(n)=
 			\begin{cases}
-				0 & \text{if $n=0$} \\	
-				4f(n/2) & \text{if $n>0$ and even} \\	
-				f(n-1)+2n-1 & \text{if $n>0$ and odd} \\	
+				0 & \text{if $n=0$} \\
+				4f(n/2) & \text{if $n>0$ and even} \\
+				f(n-1)+2n-1 & \text{if $n>0$ and odd} \\
 			\end{cases}$ \\
-			Prove that $f(n)=n^2$ for all $n\geq0$ \\
+			Prove that $f(n)=n^2$ for all $n\geq0$. \\
+			Let property $P(n)$ be $f(n)=n^2$. \\
+			\textbf{Basis:} \\
+			$P(0): (f(0)=0)=(0^2=0)$ is true. \\
+			$P(1): (f(0)+2\cdot1-1=1)=(1^2=1)$ is true. \\
+			\textbf{Inductive hypothesis:} \\
+			Let $k\geq1$. \\
+			Assume $P(i): f(i)=i^2$ for $0\leq i\leq k$ and $i\in\mathbb{Z}$ to be true. \\
+			Prove $P(k+1): f(k+1)=(k+1)^2$: \\
+			\begin{tabular}{|l|}
+				\hline
+				\case{1}{$k+1$ is even} \\
+				\hline
+				$0\leq(k+1)/2\leq k$ \\
+				$0\leq k+1\leq2k$ \\
+				$-k\leq1\leq k$ \\
+				$k\geq1$ is true. \\
+				$\begin{aligned}[t]
+					f(k+1) &= 4f((k+1)/2) \\
+					&= 4\left(\dfrac{k+1}{2}\right)^2 & \text{$P(i)$ is true} \\
+					&= (k+1)^2 \\
+				\end{aligned}$ \\
+				Proof done. \\
+				\hline
+			\end{tabular}
+			\begin{tabular}{|l|}
+				\hline
+				\case{2}{$k+1$ is odd} \\
+				\hline
+				$0\leq k/2\leq k$ \\
+				$0\leq k\leq 2k$ \\
+				$-k\leq0\leq k$ \\
+				$k\geq0$ is true. \\
+				$\begin{aligned}[t]
+					f(k+1) &= f((k+1)-1)+2(k+1)-1 \\
+					&= f(k)+2k+1 \\
+					&= 4f(k/2)+2k+1 & \text{$k$ is even} \\
+					&= 4\left(\dfrac{k}{2}\right)^2+2k+1 & \text{$P(i)$ is true} \\
+					&= k^2+2k+1 = (k+1)^2 \\
+				\end{aligned}$ \\
+				Proof done. \\
+				\hline
+			\end{tabular}\\
+			Basis and inductive hypothesis proven, therefore original statement is true. \\
 		}
-	\end{enumerate}
-	
-	\noindent \textbf{Problem 3.}
-	\begin{enumerate}[(a)]
-		\sets{5}{28, 29}{}
-		\set{6}{2(b,d)}{}
-		\sets{6}{9, 14, 15}{}
-	\end{enumerate}
-\end{document}
+		\end{enumerate}
+		
+		\noindent \textbf{Problem 3.}
+		\begin{enumerate}[(a)]
+		\sets{5}{28, 29}{
+			$F_0,F_1,F_2,\dots$ is the Fibonacci sequence. \\
+			$F_0=1$, $F_1=1$, $F_2=2$, $F_3=3$
+			\begin{enumerate}
+				\item [28.]
+				Prove that $F^2_{k+1}-F^2_k-F^2_{k-1}=2F_kF_{k-1}$, for all integers $k\geq1$. \\
+				Let property $P(n)$ be $F^2_{n+1}-F^2_n-F^2_{n-1}=2F_nF_{n-1}$ for $n\geq1\in\mathbb{Z}$. \\
+				\textbf{Basis:} \\
+				$P(1): (F^2_2-F^2_1-F^2_0=2^2-1^2-1^2=2)=(2F_1F_0=2\cdot1\cdot1=2)$ is true. \\
+				\textbf{Inductive hypothesis:} \\
+				Assume $P(k): F^2_{k+1}-F^2_k-F^2_{k-1}=2F_kF_{k-1}$ for $k\geq1$ to be true. \\
+				Prove $P(k+1): F^2_{k+2}-F^2_{k+1}-F^2_k=2F_{k+1}F_k$: \\
+				$\begin{aligned}
+					F^2_{k+2}-F^2_{k+1}-F^2_k &= (F_{k+1}+F_k)^2-(F_k+F_{k-1})^2-F^2_k \\
+					&= (2F_k+F_{k-1})^2-(F_k+F_{k-1})^2-F^2_k \\
+					&= 4F^2_k+4F_kF_{k-1}+F^2_{k-1}-(F^2_k+2F_kF_{k-1}+F_{k-1}^2)-F^2_k \\
+					&= 2F^2_k+2F_kF_{k-1} \\
+					&= 2F_k(F_k+F_{k-1}) \\
+					&= 2F_kF_{k+1} \\
+				\end{aligned}$ \\
+				Basis and inductive hypothesis proven, therefore original statement is true. \\
+				
+				\item [29.]
+				Prove that $F^2_{k+1}-F^2_k=F_{k-1}F_{k+2}$, for all integers $k\geq1$. \\
+				Let property $P(n)$ be $F^2_{n+1}-F^2_n=F_{n-1}F_{n+2}$. \\
+				\textbf{Basis:} \\
+				$P(1): (F^2_2-F^1_1=3)=(F_0F_3=3)$ is true. \\
+				\textbf{Inductive hypothesis:} \\
+				Assume $P(k): F^2_{k+1}-F^2_k=F_{k-1}F_{k+2}$ for $k\geq1\in\mathbb{Z}$ to be true. \\
+				Prove $P(k+1): F^2_{k+2}-F^2_{k+1}=F_kF_{k+3}$: \\
+				$\begin{aligned}[t]
+					F^2_{k+2}-F^2_{k+1} &= (F_{k+1}+F_k)^2-(F_k+F_{k-1})^2 \\
+					&= (2F_k+F_{k-1})^2-(F^2_k+2F_kF_{k-1}+F^2_{k-1}) \\
+					&= 4F^2_k+4F_kF_{k-1}+F^2_{k-1}-(F^2_k+2F_kF_{k-1}+F^2_{k-1}) \\
+					&= 3F^2_k+2F_kF_{k-1} \\
+					&= F_k(3F_k+2F_{k-1}) \\
+					&= F_k(F_{k+1}+2F_k+F_{k-1}) \\
+					&= F_k(F_{k+2}+F_k+F_{k-1}) \\
+					&= F_k(F_{k+2}+F_{k+1}) \\
+					&= F_kF_{k+3} \\
+				\end{aligned}$ \\
+				Basis and inductive hypothesis proven, therefore original statement is true. \\
+			\end{enumerate}
+		}
+		\set{6}{2(b,d)}{
+			The formula \\
+			$1+r+r^2+\dots+r^n=\dfrac{r^{n+1}-1}{r-1}$ \\
+			is true for all real numbers $r$ except for $r=1$ and for all integers $n\geq0$.
+			\begin{enumerate}
+				\item [(b)]
+				If $n$ is an integer and $n\geq1$, find a formula for the expression $3^{n-1}+3^{n-2}+\dots+3^2+3+1$. \\
+				$\Sum{i=0}{n-1}3^i =\dfrac{3^n-1}{2}$ \\
+				
+				\item [(d)]
+				If $n$ is an integer and $n\geq1$, find a formula for the expression \\
+				$2^n-2^{n-1}+2^{n-2}-2^{n-3}+\dots+(-1)^{n-1}\cdot2+(-1)^n$. \\
+				$(-1)^02^n+(-1)^12^{n-1}+(-1)^22^{n-2}+(-1)^32^{n-3}+\dots+(-1)^{n-1}\cdot2^1+(-1)^n2^0$. \\
+				$\begin{aligned}[t]
+					\Sum{i=0}{n}(-1)^i2^{n-i} &= \Sum{i=0}{n}(-1)^i\dfrac{2^n}{2^i} \\
+					&= 2^n\Sum{i=0}{n}\dfrac{(-1)^i}{2^i} \\
+					&= 2^n\Sum{i=0}{n}\left(-\dfrac{1}{2}\right)^i \\
+					&= 2^n\dfrac{\left(-\frac{1}{2}\right)^{n+1}-1}{-\frac{1}{2}-1} \\
+					&= 2^n\dfrac{2((-\frac{1}{2})^{n+1}-1)}{3} \\
+					&= -\dfrac{2^{n+1}((-\frac{1}{2})^{n+1}-1)}{3} \\
+					&= -\dfrac{(-1)^{n+1}-2^{n+1}}{3} \\
+					&= \dfrac{2^{n+1}-(-1)^{n+1}}{3} \\
+				\end{aligned}$ \\
+			\end{enumerate}
+		}
+		\sets{6}{9, 14, 15}{
+			\begin{enumerate}
+				\item [9.]
+				$g_k=\dfrac{g_{k-1}}{g_{k-1}+2}$ for all integers $k\geq2$ \\
+				$g_1=1$ \\
+				$\begin{aligned}[t]
+					g_2 &= \dfrac{1}{1+2} = \dfrac{1}{1+2^1}\\
+					g_3 &= \dfrac{\frac{1}{1+2}}{\frac{1}{1+2}+2} = \dfrac{1}{1+2}\cdot\dfrac{1+2}{1+2(1+2)} = \dfrac{1}{1+2(1+2)} = \dfrac{1}{1+2^1+2^2} \\
+					g_4 &= \dfrac{\frac{1}{1+2+4}}{\frac{1}{1+2+4}+2} = \dfrac{1}{1+2+4}\cdot\dfrac{1+2+4}{1+2(1+2+4)} = \dfrac{1}{1+2(1+2+4)} = \dfrac{1}{1+2^1+2^2+2^3} \\
+				\end{aligned}$ \\
+				$g_k=\dfrac{1}{\Sum{i=0}{k-1}2^i}$ \\
+				$g_k=\dfrac{1}{\dfrac{2^{(k-1)+1}-1}{2-1}}$ \\
+				$g_k=\dfrac{1}{2^k-1}$ \\
+				
+				\item [14.]
+				$x_k=3x_{k-1}+k$, for all integers $k\geq2$ \\
+				$x_1=1$ \\
+				$\begin{aligned}[t]
+					x_2 &= 3\cdot1+2 \\
+					x_3 &= 3(3\cdot1+2)+3 = 3^2\cdot1+3\cdot2+3\\
+					x_4 &= 3(3^2\cdot1 + 3\cdot2 + 3)+4 = 3^3\cdot1+3^2\cdot2+3\cdot3+4 \\
+				\end{aligned}$ \\
+				$x_k=\Sum{i=0}{k-1}3^i(k-i)=\Sum{i=0}{k-1}k3^i-\Sum{i=0}{k-1}i3^i$ \\
+				$x_k=k\cdot\dfrac{3^k-1}{2}-\Sum{i=1}{k-1}i3^i$ \\
+				$x_k=k\cdot\dfrac{3^k-1}{2}-\left(1(3)+2(3\cdot3)+3(3\cdot3\cdot3)+\dots+(k-1)(\underbrace{3\cdot{}\dots{}\cdot3}_{\text{$k-1$ times}})\right)$ \\
+				$x_k=k\cdot\dfrac{3^k-1}{2}-3\left(1+2(3)+3(3\cdot3)+\dots+(k-1)(\underbrace{3\cdot{}\dots{}\cdot3}_{\text{$k-2$ times}})\right)$ \\
+				$x_k=k\cdot\dfrac{3^k-1}{2}-3\left(1+2(3)+3(3\cdot3)+\dots+(k-1)(\underbrace{3\cdot{}\dots{}\cdot3}_{\text{$k-2$ times}})\right)$ \\
+%				$x_k=k\cdot\dfrac{3^k-1}{2}-\left(3+(3\cdot3+3\cdot3)+(3\cdot3\cdot3+3\cdot3\cdot3+3\cdot3\cdot3)+\dots+(\Sum{1}{k-1}\underbrace{3\cdot{}\dots{}\cdot3}_{\text{$k-1$ times}})\right)$ \\
+%				$x_k=k\cdot\dfrac{3^k-1}{2}-\left(3+\Sum{1}{2}3\cdot3+\Sum{1}{3}3\cdot3\cdot3+\dots+\Sum{1}{k-1}\underbrace{3\cdot{}\dots{}\cdot3}_{\text{$k-1$ times}}\right)$ \\
+%				$x_k=k\cdot\dfrac{3^k-1}{2}-\left(3+\Sum{1}{2}\Sum{1}{3}3+\Sum{1}{3}\Sum{1}{9}3+\dots+\Sum{1}{k-1}\Sum{1}{3^{k-2}}3\right)$ \\
+%				$x_k=k\cdot\dfrac{3^k-1}{2}-\left(3+\Sum{1}{6}3+\Sum{1}{27}3+\dots+\Sum{1}{(k-1)3^{k-2}}3\right)$ \\
+%				$x_k=k\cdot\dfrac{3^k-1}{2}-3\left(1+\Sum{1}{6}1+\Sum{1}{27}1+\dots+\Sum{1}{(k-1)3^{k-2}}1\right)$ \\
+				%				$\begin{array}{l|l}
+					%					x_1 & 1 \\\hline
+					%					x_2 & 5 \\\hline
+					%					x_3 & 18 \\\hline
+					%					x_4 & 58 \\\hline
+					%					x_5 & 179 \\\hline
+					%					x_6 & 543 \\\hline
+					%					x_7 & 1636 \\
+					%				\end{array}$ \\
+			\end{enumerate}
+		}
+		\newpage
+		\begin{enumerate}
+			\item [15.]
+			$y_k=y_{k-1}+k^2$, for all integers $k\geq2$ \\
+			$y_1=1$ \\
+			$\begin{aligned}[t]
+				y_2 &= 1+2^2 = 5 \\
+				y_3 &= (1+2^2)+3^2 = 14 \\
+				y_4 &= (1+2^2+3^2)+4^2 = 30 \\
+			\end{aligned}$ \\
+			$y_k=\Sum{i=1}{k}i^2$ \\
+			
+			\begin{minipage}{0.2\textwidth}
+				\includegraphics{stack}
+			\end{minipage}
+			 Let $S=\Sum{i=1}{k}i^2$ be the volume of a stack constructed as so, $k$ layers high. \\
+			 \begin{minipage}{0.4\textwidth}
+			 	\includegraphics[scale=0.5]{stack 2}
+			 	\includegraphics[scale=0.7]{stack 2 2}
+			 \end{minipage}
+			 Create another stack and combine. Volume is $2S$. \\
+			 \begin{minipage}{0.4\textwidth}
+			 	\includegraphics[scale=0.4]{stack 3}
+			 	\includegraphics[scale=0.55]{stack 3 2}
+			 \end{minipage}
+			 Create another stack and combine. Volume is $3S$. \\
+			 \begin{minipage}{0.3\textwidth}
+			 	\includegraphics[scale=0.5]{detach}
+			 \end{minipage}
+			 \begin{minipage}{0.7\textwidth}
+			 	Volume of prism is $n^2(n+1)$ \\
+			 	Volume of triangle is $\Sum{i=1}{k}i=\dfrac{n(n+1)}{2}$ \\
+			 \end{minipage}
+			 $3S=k^2(k+1)+\dfrac{k(k+1)}{2}$ \\
+			 $6S=2k^2(k+1)+k(k+1)$ \\
+			 $6S=(k+1)(2k^2+k)$ \\
+			 $6S=(k+1)(k(2k+1))$ \\
+			 $S=\dfrac{k(k+1)(2k+1)}{6}=\Sum{i=1}{k}i^2$ \\
+			 $y_k=\dfrac{k(k+1)(2k+1)}{6}$ \\
+		\end{enumerate}
+		\end{enumerate}
+	\end{document}
