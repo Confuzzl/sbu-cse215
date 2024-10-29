@@ -446,10 +446,12 @@
 				\hline
 				\case{1}{$k+1$ mod $3=0$} \\
 				\hline
-				$1\leq (k+1)/3\leq k$ \\
-				$2\leq k \leq 3k-1$ \\
-				$k\geq 2$ is true. \\
-				$\dfrac{k+1}{3}=c_r\cdot3^r+c_{r-1}\cdot3^{r-1}+\dots+c_2\cdot3^2+c_1\cdot3+c_0$ \\
+				$\left.\begin{aligned}
+					& 1\leq (k+1)/3\leq k \\
+					& 2\leq k \leq 3k-1 \\
+					& k\geq 2 \\
+				\end{aligned}\right\}$ is true. \\
+				$\dfrac{k+1}{3}=c_r\cdot3^r+c_{r-1}\cdot3^{r-1}+\dots+c_2\cdot3^2+c_1\cdot3+c_0$ because $P(i)$ \\
 				$k+1=c_r\cdot3^{r+1}+c_{r-1}\cdot3^r+\dots+c_2\cdot3^3+c_1\cdot3^2+c_0\cdot3$ \\
 				$k+1$ is the sum of multiples of powers of 3. \\
 				Proof done. \\
@@ -457,10 +459,12 @@
 				\case{2}{$k+1$ mod $3=1$} \\
 				\hline
 				$k$ mod $3=0$ \\
-				$1\leq k/3\leq k$ \\
-				$3\leq k\leq 3k$ \\
-				$k\geq3$ is true. \\
-				$\dfrac{k}{3}=c_r\cdot3^r+c_{r-1}\cdot3^{r-1}+\dots+c_2\cdot3^2+c_1\cdot3+c_0$ \\
+				$\left.\begin{aligned}
+					& 1\leq k/3\leq k \\
+					& 3\leq k\leq 3k \\
+					& k\geq 3 \\
+				\end{aligned}\right\}$ is true. \\
+				$\dfrac{k}{3}=c_r\cdot3^r+c_{r-1}\cdot3^{r-1}+\dots+c_2\cdot3^2+c_1\cdot3+c_0$ because $P(i)$ \\
 				$k=c_r\cdot3^{r+1}+c_{r-1}\cdot3^r+\dots+c_2\cdot3^3+c_1\cdot3^2+c_0\cdot3$ \\
 				$k+1=c_r\cdot3^{r+1}+c_{r-1}\cdot3^r+\dots+c_2\cdot3^3+c_1\cdot3^2+c_0\cdot3+(1\cdot3^0=1)$ \\
 				$k+1$ is the sum of multiples of powers of 3. \\
@@ -469,10 +473,12 @@
 				\case{3}{$k+1$ mod $3=2$} \\
 				\hline
 				$k-1$ mod $3=0$ \\
-				$1\leq (k-1)/3\leq k$ \\
-				$4\leq k \leq 3k+1$ \\
-				$k\geq4$ is true. \\
-				$\dfrac{k-1}{3}=c_r\cdot3^r+c_{r-1}\cdot3^{r-1}+\dots+c_2\cdot3^2+c_1\cdot3+c_0$ \\
+				$\left.\begin{aligned}
+					& 1\leq (k-1)/3\leq k \\
+					& 4\leq k \leq 3k+1 \\
+					& k\geq 4 \\
+				\end{aligned}\right\}$ is true. \\
+				$\dfrac{k-1}{3}=c_r\cdot3^r+c_{r-1}\cdot3^{r-1}+\dots+c_2\cdot3^2+c_1\cdot3+c_0$ because $P(i)$ \\
 				$k-1=c_r\cdot3^{r+1}+c_{r-1}\cdot3^r+\dots+c_2\cdot3^3+c_1\cdot3^2+c_0\cdot3$ \\
 				$k+1=c_r\cdot3^{r+1}+c_{r-1}\cdot3^r+\dots+c_2\cdot3^3+c_1\cdot3^2+c_0\cdot3+(2\cdot3^0=2)$ \\
 				$k+1$ is the sum of multiples of powers of 3. \\
@@ -526,10 +532,12 @@
 				\hline
 				\case{1}{$k+1$ is even} \\
 				\hline
-				$0\leq(k+1)/2\leq k$ \\
-				$0\leq k+1\leq2k$ \\
-				$-k\leq1\leq k$ \\
-				$k\geq1$ is true. \\
+				$\left.\begin{aligned}
+					0\leq(k+1)/2\leq k \\
+					0\leq k+1\leq2k \\
+					-k\leq1\leq k \\
+					k\geq1 \\
+				\end{aligned}\right\}$ is true. \\
 				$\begin{aligned}[t]
 					f(k+1) &= 4f((k+1)/2) \\
 					&= 4\left(\dfrac{k+1}{2}\right)^2 & \text{$P(i)$ is true} \\
@@ -542,10 +550,12 @@
 				\hline
 				\case{2}{$k+1$ is odd} \\
 				\hline
-				$0\leq k/2\leq k$ \\
-				$0\leq k\leq 2k$ \\
-				$-k\leq0\leq k$ \\
-				$k\geq0$ is true. \\
+				$\left.\begin{aligned}
+					0\leq k/2\leq k \\
+					0\leq k\leq 2k \\
+					-k\leq0\leq k \\
+					k\geq0 \\
+				\end{aligned}\right\}$ is true. \\
 				$\begin{aligned}[t]
 					f(k+1) &= f((k+1)-1)+2(k+1)-1 \\
 					&= f(k)+2k+1 \\
