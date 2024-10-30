@@ -1,0 +1,163 @@
+\documentclass[letterpaper,fleqn,leqno]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[letterpaper, margin=1in]{geometry}
+%\usepackage{tabularx}
+%\usepackage{tikz}
+\usepackage{mathrsfs}
+
+\begin{document}
+	\newcommand{\problem}[2]{
+		\noindent\textbf{Problem #1.} \\
+		Exercise Set 6.#2
+	}
+	\newcommand{\chunk}[1]{
+		\noindent\begin{minipage}[t]{\textwidth}
+			#1
+		\end{minipage}
+	}
+	\newcommand{\quess}[2]{
+		\begin{enumerate}
+			\item [#1.]
+			#2
+		\end{enumerate}
+	}
+	\newcommand{\ques}[2]{
+		\begin{enumerate}
+			\item [#1.] \quad
+			#2
+		\end{enumerate}
+	}
+	\newcommand{\union}[2] {
+		\displaystyle \bigcup\limits_{#1}^{#2}
+	}
+	\newcommand{\inter}[2] {
+		\displaystyle \bigcap\limits_{#1}^{#2}
+	}
+	\newcommand{\q}[1]{\stackrel{?}{#1}}
+
+	\chunk{
+		\problem{1}{1}
+		\quess{25}{
+			Let $R_i=\left\{x\in\mathbb{R} | 1\leq x\leq1+\dfrac{1}{i}\right\}=\left[1,\,1+\dfrac{1}{i}\right]$ for all positive integers $i$. \\
+			\begin{enumerate}[(a)]
+				\item $\union{i=1}{4}R_i=\left[1,\,2\right]$ \\
+				\item $\inter{i=1}{4}R_i=\left[1,\,\dfrac{5}{4}\right]$ \\
+				\item Are $R_1,R_2,R_3,\dots$ mutually disjoint? Explain. \\
+				No because they all contain 1. \\
+				\item $\union{i=1}{n}R_i=\left[1,\,2\right]$ \\
+				\item $\inter{i=1}{n}R_i=\left[1,\,1+\dfrac{1}{n}\right]$ \\
+				\item $\union{i=1}{\infty}R_i=\left[1,\,2\right]$ \\
+				\item $\inter{i=1}{\infty}R_i=\{1\}$ \\
+			\end{enumerate}
+		}
+	}
+	\chunk{
+		\problem{2}{1}
+		\quess{26}{
+			Let $R_i=\left\{x\in\mathbb{R} | 1<x<1+\dfrac{1}{i}\right\}=\left(1,\,1+\dfrac{1}{i}\right)$ for all positive integers $i$. \\
+			\begin{enumerate}[(a)]
+				\item $\union{i=1}{4}R_i=\left(1,\,2\right)$ \\
+				\item $\inter{i=1}{4}R_i=\left(1,\,\dfrac{5}{4}\right)$ \\
+				\item Are $R_1,R_2,R_3,\dots$ mutually disjoint? Explain. \\
+				No because $R_1$ and $R_2$ contain 1.25. \\
+				\item $\union{i=1}{n}R_i=\left(1,\,2\right)$ \\
+				\item $\inter{i=1}{n}R_i=\left(1,\,1+\dfrac{1}{n}\right)$ \\
+				\item $\union{i=1}{\infty}R_i=\left(1,\,2\right)$ \\
+				\item $\inter{i=1}{\infty}R_i=\O$ \\
+			\end{enumerate}
+		}
+	}
+	\chunk{
+		\problem{3}{1}
+		\ques{33}{
+			\begin{enumerate}[(a)]
+				\item $\mathscr{P}(\O)=\{\O\}$
+				\item $\mathscr{P}(\mathscr{P}(\O))=\{\O,\,\{\O\}\}$
+				\item $\mathscr{P}(\mathscr{P}(\mathscr{P}(\O)))=
+				\{\O,\,
+				\{\O\},\,
+				\{\{\O\}\},\,
+				\{\O,\,\{\O\}\}\}$
+			\end{enumerate}
+		}
+		\quess{35}{
+			Let $A=\{a,\,b\}$, $B=\{1,\,2\}$, and $C=\{2,\,3\}$. Find each of the following sets.
+			\begin{enumerate}[(a)]
+				\item $A\times(B\cup C)=\{
+				(a,\,1),\,(a,\,2),\,(a,\,3),\,
+				(b,\,1),\,(b,\,2),\,(b,\,3),\}$
+				\item $(A\times B)\cup(A\times C)=\{(a,\,1),\,(b,\,1),\,(a,\,2),\,(b,\,2),\,(a,\,3),\,(b,\,3)\}$
+				\item $A\times(B\cap C)=\{(a,\,2),\,(b,\,2)\}$
+				\item $(A\times B)\cap(A\times C)=\{(a,\,2),\,(b,\,2)\}$
+			\end{enumerate}
+		}
+	}
+	\chunk{
+		\problem{4}{2}
+		\quess{10}{
+			For all sets $A$, $B$, and $C$, $(A-B)\cap(C-B)=(A\cap C)-B$ \\
+			\textbf{Proof:}
+			\begin{itemize}
+				\item []
+				\textbf{Part 1: $(A-B)\cap(C-B)\subseteq(A\cap C)-B$} \\
+				Suppose $x\in(A-B)\cap(C-B)$. \\
+				Prove $x\in(A\cap C)-B$. \\
+				$x\in(A\cap B^c)\cap(C\cap B^c)$ by set difference law. \\
+				$x\in A\cap C\cap B^c$ by idempotent law.\\
+				$x\in (A\cap C)-B$ by set difference law.\\
+				Proof done.
+
+				\item []
+				\textbf{Part 2: $(A\cap C)-B\subseteq(A-B)\cap(C-B)$} \\
+				Suppose $x\in(A\cap C)-B$. \\
+				Prove $x\in(A-B)\cap(C-B)$. \\
+				$x\in(A\cap C)\cap B^c$ by set difference law. \\
+				$x\in A\cap B^c\cap C\cap B^c$ by idempotent law. \\
+				$x\in (A-B)\cap(C-B)$ by set difference law. \\
+				Proof done.
+			\end{itemize}
+			Both parts proven therefore $(A-B)\cap(C-B)=(A\cap C)-B$. \\
+		}
+	}
+	\chunk{
+		\problem{5}{2}
+		\quess{19}{
+			For all sets $A$, $B$, and $C$, $A\times(B\cap C)=(A\times B)\cap(A\times C)$ \\
+			\textbf{Proof:}
+			\begin{itemize}
+				\item []
+				\textbf{Part 1: $A\times(B\cap C)\subseteq(A\times B)\cap(A\times C)$} \\
+				Suppose $x\in A\times(B\cap C)$. \\
+				Prove $x\in(A\times B)\cap(A\times C)$. \\
+				$x\in(A\times B)\cap(A\times C)$ by distributive law. \\
+				Proof done.
+
+				\item []
+				\textbf{Part 2: $(A\times B)\cap(A\times C)\subseteq A\times(B\cap C)$} \\
+				Suppose $x\in(A\times B)\cap(A\times C)$. \\
+				Prove $x\in A\times(B\cap C)$. \\
+				$x\in A\times(B\cap C)$ by distributive law. \\
+				Proof done.
+			\end{itemize}
+			Both parts proven therefore $A\times(B\cap C)=(A\times B)\cap(A\times C)$. \\
+		}
+	}
+	\chunk{
+		\problem{6}{2}
+		\quess{34}{
+			For all sets $A$, $B$, and $C$, if $B\cap C\subseteq A$, then $(C-A)\cap(B-A)=\O$ \\
+			\textbf{Proof:} \\
+			Let $B\cap C\subseteq A$. \\
+			Assume $(C-A)\cap(B-A)\not=\O$. \\
+			Suppose $x\in(C-A)\cap(B-A)$. \\
+			$x\in(C\cap B)\cap A^c$ as proven previously. \\
+			$x\in B\cap C$ and $x\in A^c$ by definition of intersection. \\
+			Since $B\cap C\subseteq A$, $x\in A$ by definition of subset. \\
+			Contradiction because $x\in A$ and $x\not\in A \Leftrightarrow x\in A^c$. \\
+			Assumption is false therefore if $B\cap C\subseteq A$, then $(C-A)\cap(B-A)=\O$. \\
+		}
+	}
+\end{document}
