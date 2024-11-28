@@ -186,10 +186,9 @@
 	\chunk{
 		\problem{6}{2}
 		\quess{29}{
-			Prove that all real numbers $a$, $b$, and $x$ with $b$ and $x$ positive and $b\not=1$,\\
+			Prove that all real numbers $a$, $b$, and $x$ with $b$ and $x$ positive and $b\not=1$, $\log_b(x^a)=a\log_bx$.\\
 			$\log_b(x^a)=a\log_bx$\\
-			$\exp_b(\log_b(x^a))=\exp_b(a\log_bx)$\\
-			$x^a=\exp_b(\log_bx\cdot a)$\\
+			$\exp_b(\log_b(x^a))=\exp_b(a\log_bx)$\\\textbf{}
 			$x^a=(\exp_b(\log_bx))^a$\\
 			$x^a=x^a$\\
 		}
@@ -199,14 +198,15 @@
 		\quess{11}{
 			$H$ and $H^{-1}$ are both defined from $\mathbb{R}-\{1\}$ to $\mathbb{R}-\{1\}$ by the formula\\
 			$H(x)=H^{-1}(x)=\dfrac{x+1}{x-1}$, for all $x\in\mathbb{R}-\{1\}$.\\
-			$H(x)=H^{-1}(x)$ therefore $H\circ H^{-1}(x)=H^{-1}\circ H(x)=H\circ H(x)$.\\
+			$H(x)=H^{-1}(x)$ therefore $(H\circ H^{-1})(x)=(H^{-1}\circ H)(x)=(H\circ H)(x)$.\\
 			$\begin{aligned}
-				H\circ H(x) &= \dfrac{\frac{x+1}{x-1}+1}{\frac{x+1}{x-1}-1}\\
+				(H\circ H)(x) &= \dfrac{\frac{x+1}{x-1}+1}{\frac{x+1}{x-1}-1}\\
 				&= \dfrac{\frac{x+1}{x-1}+\frac{x-1}{x-1}}{\frac{x+1}{x-1}-\frac{x-1}{x-1}}\\
 				&= \dfrac{\frac{2x}{x-1}}{\frac{2}{x-1}}\\
 				&= \dfrac{2x}{x-1}\cdot\dfrac{x-1}{2}\\
 				&= x\\
 			\end{aligned}$\\
+			Both compositions produce the identity function.\\
 		}
 	}
 	\chunk{
@@ -223,6 +223,7 @@
 				(g(f(x)))^{-1}(C) &\q{=} (f^{-1}\circ g^{-1})(C))\\
 				h^{-1}(C) &= h^{-1}(C)\\
 			\end{aligned}$\\
+			Property is true.\\
 		}
 	}
 	\chunk{
@@ -250,16 +251,17 @@
 					F is one-to-one.\\
 				\end{tabular} &
 				\begin{tabular}[t]{l}
-					Suppose $y\in\mathbb{S}$.\\
+					Suppose $y\in S$.\\
 					$F$ is onto if there exists $x\in W$ where $F(x)=y$.\\
 					$\begin{aligned}
 						\dfrac{x-a}{b-a} &= y\\
 						x &= y(b-a)+a\\
 					\end{aligned}$\\
-					$a<y(b-a)+a<b$\\
-					$0<y(b-a)<b-a$\\
 					$0<y<1$\\
-					$y(b-a)+a\in W$\\
+					$0<y(b-a)<b-a$\\
+					$a<y(b-a)+a<b$\\
+					$a<x<b$\\
+					$x\in W$\\
 					$\begin{aligned}
 						F(y(b-a)+a) &= \dfrac{(y(b-a)+a)-a}{b-a}\\
 						&= \dfrac{y(b-a)}{b-a}\\
@@ -280,9 +282,9 @@
 				\begin{axis}[
 					title={$f(x)=2x$},
 					xmin=-4, xmax=4,
-					ymin=-8, ymax=8,
+					ymin=-4, ymax=4,
 					xtick={-4,...,4},
-					ytick={-8,-6,...,8},
+					ytick={-4,...,4},
 					axis lines=middle,
 					grid=major
 				]
@@ -295,8 +297,9 @@
 				\begin{axis}[
 					title={$f(x)=x^3$},
 					xmin=-4, xmax=4,
-					ymin=-100, ymax=100,
+					ymin=-30, ymax=30,
 					xtick={-4,...,4},
+					ytick={-30,-20,...,30},
 					axis lines=middle,
 					grid=major
 					]

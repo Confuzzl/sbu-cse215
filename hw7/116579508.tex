@@ -1,0 +1,178 @@
+\documentclass[letterpaper,fleqn,leqno]{article}
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{enumerate}
+\usepackage[letterpaper, margin=1in]{geometry}
+\usepackage{tabularx}
+%\usepackage{pgfplots}
+%\usepackage{xcolor, colortbl}
+%\usepackage{mathrsfs}
+\usepackage{cancel}
+
+\setlength{\extrarowheight}{3pt}
+
+\begin{document}
+	\newcommand{\problem}[2]{
+		\noindent\textbf{Problem #1.} \\
+		Exercise Set 8.#2
+	}
+	\newcommand{\chunk}[1]{
+		\noindent\begin{minipage}[t]{\textwidth}
+			#1
+		\end{minipage}
+	}
+	\newcommand{\quess}[2]{
+		\begin{enumerate}
+			\item [#1.]
+			#2
+		\end{enumerate}
+	}
+	\newcommand{\ques}[2]{
+		\begin{enumerate}
+			\item [#1.] \quad
+			#2
+		\end{enumerate}
+	}
+%	\newcommand{\union}[2] {
+%		\displaystyle \bigcup\limits_{#1}^{#2}
+%	}
+%	\newcommand{\inter}[2] {
+%		\displaystyle \bigcap\limits_{#1}^{#2}
+%	}
+
+	\chunk{
+		\problem{1}{1}
+		\quess{11}{
+			$A=\{3,4,5\}$, $B=\{4,5,6\}$\\
+			$\forall (x,y) \in A \times B,\; x\;S\;y \Leftrightarrow x\mid y$\\
+			$S=\{(3,6),(4,4),(5,5)\}$\\
+			$S^{-1}=\{(6,3),(4,4),(5,5)\}$\\
+		}
+	}
+	\chunk{
+		\problem{2}{1}
+		\quess{20}{
+			$A=\{-1,1,2,4\}$, $B=\{1,2\}$\\
+			$\begin{aligned}
+				\forall (x,y) \in A \times B,\; & x\;R\;y \Leftrightarrow |x|=|y|\\
+				& x\;S\;y \Leftrightarrow \text{$x-y$ is even}\\
+			\end{aligned}$\\
+			$A \times B = \left\{
+			\begin{aligned}
+				& (-1,1),(1,1),(2,1),(4,1),\\
+				& (-1,2),(1,2),(2,2),(4,2)\\
+			\end{aligned}
+			\right\}$\\
+			$R=\{(-1,1),(1,1),(2,2)\}$\\
+			$S=\{(-1,1),(1,1),(2,2),(4,2)\}$\\
+			$R \cup S = \{(-1,1),(1,1),(2,2),(4,2)\}=S$\\
+			$R \cap S = \{(-1,1),(1,1),(2,2)\}=R$\\
+		}
+	}
+	\chunk{
+		\problem{3}{2}
+		\quess{10}{
+			$\forall x,y \in \mathbb{R},\; x\;C\;y \Leftrightarrow x^2+y^2=1$\\
+			$C$ is not reflexive because for $x=1$, $x\;\cancel{C}\;x$.\\
+			$C$ is symmetric because $\forall x,y \in \mathbb{R}$, $(x^2+y^2=1)\equiv(y^2+x^2=1)$.\\
+			$C$ is not transitive because for $(x,y,z)=(1,0,1)$, $x\;C\;y$ and $y\;C\;z$, but $x\;\cancel{C}\;z$.\\
+		}
+	}
+	\chunk{
+		\problem{4}{2}
+		\quess{16}{
+			$\forall x,y \in \mathbb{R},\; x\;A\;y \Leftrightarrow |x|=|y|$\\
+			$A$ is reflexive because $\forall x \in \mathbb{R},\; |x|=|x| \Leftrightarrow x\;R\;x$ is true.\\
+			$A$ is symmetric because $\forall x,y \in \mathbb{R}$, $(|x|=|y|)\equiv(|y|=|x|)$, therefore $x\;A\;y \Leftrightarrow y\;A\;x$.\\
+			$A$ is transitive because $\forall x,y,z \in \mathbb{R}$, if $x\;A\;y \Leftrightarrow |x|=|y|$ and $y\;A\;z \Leftrightarrow |y|=|z|$, then $|x|=|y|=|z|$, therefore $|x|=|z|\Leftrightarrow x\;A\;z$.\\
+		}
+	}
+	\chunk{
+		\problem{5}{2}
+		\quess{17}{
+			$\forall m,n \in \mathbb{Z},\; m\;P\;n \Leftrightarrow \text{$\exists$ a prime number $p$ such that $p\mid m$ and $p\mid n$}$\\
+			$P$ is not reflexive because for $m=1$, $m\;\cancel{P}\;m$.\\
+			$P$ is symmetric because $\forall m,n \in \mathbb{Z}$, $(\text{$p\mid m$ and $p\mid n$}) \equiv (\text{$p\mid n$ and $p\mid m$})$, therefore $m\;P\;n \Leftrightarrow n\;P\;m$.\\
+			$P$ is not transitive because for $(x,y,z)=(3,12,4)$, $x\;P\;y$ for $p=3$ and $y\;P\;z$ for $p=2$, but $x\;\cancel{P}\;z$.\\
+		}
+	}
+	\chunk{
+		\problem{6}{2}
+		\quess{19}{
+			$\forall x,y \in \mathbb{R},\; x\;I\;y \Leftrightarrow \text{$x-y$ is irrational}$\\
+			$I$ is not reflexive because for $x=1$, $x\;\cancel{I}\;x$.\\
+			$I$ is symmetric because $\forall x,y\in \mathbb{R}$, if $x-y$ is irrational, then $y-x=-(x-y)$ must also be irrational because the negation of an irrational number is also irrational, therefore $x\;I\;y \Leftrightarrow y\;I\;x$.\\
+			$I$ is not transitive because for $(x,y,z)=(\pi,\sqrt{2},\pi)$, $x\;I\;y$ and $y\;I\;z$, but $x\;\cancel{I}\;z$.\\
+		}
+	}
+	\chunk{
+		\problem{7}{2}
+		\quess{33}{
+			Let $A$ be the set of all lines in the plane.\\
+			$\forall l_1,l_2 \in A,\; l_1\;R\;l_2 \Leftrightarrow l_1 \perp l_2$\\
+			$R$ is not reflexive because no line is perpendicular to itself.\\
+			$R$ is symmetric because $\forall l_1,l_2\in A$, if $l_1 \perp l_2$, then $l_2 \perp l_1 \Leftrightarrow l_2\;R\;l_1$.\\
+			$R$ is not transitive because if $a\;R\;b$ and $b\;R\;c$, then $a$ and $c$ are the same line, therefore $a\;\cancel{R}\;c$.\\
+		}
+	}
+	\chunk{
+		\problem{8}{3}
+		\quess{20}{
+			Let $A$ be the set of all statement forms in three variables $p$, $q$, and $r$.\\
+			$\forall P,Q \in A,\; P\;\textbf{R}\;Q \Leftrightarrow \text{$P$ and $Q$ have the same truth table}$\\
+			$\textbf{R}$ is reflexive because any statement has the same truth table as itself.\\
+			$\textbf{R}$ is symmetric because $\forall P,Q\in A$, if $P\;\textbf{R}\;Q$, then $P$'s truth table is the same as $Q$'s, which means $Q$'s truth table is the same as $P$'s, therefore $Q\;\textbf{R}\;P$.\\
+			$\textbf{R}$ is transitive because $\forall P,Q,R\in A$, if $P\;\textbf{R}\;Q$ and $Q\;\textbf{R}\;R$, then $P$ and $Q$ and $R$ all have the same truth tables, therefore $P\;\textbf{R}\;R$.\\
+			$\textbf{R}$ is reflexive, symmetric, and transitive therefore $\textbf{R}$ is an equivalence relation.\\
+			There are $2^3=8$ distinct equivalence classes of $\textbf{R}$. Each class contains an infinite amount of 3 variable boolean statements that share the same truth table.\\
+		}
+	}
+	\chunk{
+		\problem{9}{3}
+		\quess{26}{
+			$\forall (w,x),(y,z) \in \mathbb{R}^2,\; (w,x)\;Q\;(y,z) \Leftrightarrow x=z$\\
+			$Q$ is reflexive because $\forall (w,x) \in \mathbb{R}^2$, $x=x \Leftrightarrow (w,x)\;R\;(w,x)$ is true.\\
+			$Q$ is symmetric because $\forall (w,x),(y,z) \in \mathbb{R}^2$, $(x=z) \equiv (z=x)$, therefore $(w,x)\;Q\;(y,z) \Leftrightarrow (y,z)\;Q\;(w,x)$.\\
+			$Q$ is transitive because $\forall (a,b),(c,d),(e,f) \in \mathbb{R}^2$, if $(a,b)\;Q\;(c,d)$ and $(c,d)\;Q\;(e,f)$, then $b=d=f$, therefore $(a,b)\;Q\;(e,f)$.\\
+			$Q$ is reflexive, symmetric, and transitive therefore $Q$ is an equivalence relation.\\
+			There are an uncountably infinite number of distinct equivalence classes of $Q$. Each class contains an uncountably infinite number of points in $\mathbb{R}^2$ with the same y coordinate.\\
+		}
+	}
+	\chunk{
+		\problem{10}{3}
+		\quess{28}{
+			Let $A$ be the set of all straight lines in the Cartesian plane.\\
+			$\forall l_1,l_2 \in A,\; l_1\;\|\;l_2 \Leftrightarrow \text{$l_1$ is parallel to $l_2$}$\\
+			$A$ is reflexive because all lines are parallel to themselves.\\
+			$A$ is symmetric because $\forall l_1,l_2 \in A$, if $l_1\;\|\;l_2$, then $l_1$ is parallel to $l_2$, which means $l_2$ is parallel to $l_1$, therefore $l_2\;\|\;l_1$.\\
+			$A$ is transitive because $\forall l_1,l_2,l_3 \in A$, if $l_1\;\|\;l_2$ and $l_2\;\|\;l_3$, then $l_1$, $l_2$, and $l_3$ are parallel to each other, therefore $l_1\;\|\;l_3$.\\
+			$\|$ is reflexive, symmetric, and transitive therefore $\|$ is an equivalence relation.\\
+			There are an uncountably infinite number of distinct equivalence classes of $\|$. Each class contains an uncountably infinite number of mutually parallel lines.\\
+		}
+	}
+	\chunk{
+		\problem{11}{4}
+		\quess{11}{
+			$a,c,n \in \mathbb{Z}$ and $n>1$ and $a \equiv c (\bmod\; n)$\\
+			Prove $\forall m\geq1 \in \mathbb{Z},\; a^m \equiv c^m (\bmod\; n)$:\\
+			Let property $P(m)$ be $a^m \equiv c^m (\bmod\; n)$.\\
+			\textbf{Basis:}\\
+			$P(1): (a^1=a) \equiv (c^1=c) (\bmod\; n)$ is true.\\
+			\textbf{Inductive hypothesis:}\\
+			Assume $P(k): a^k \equiv c^k (\bmod\; n)$ for $k\geq1 \in \mathbb{Z}$ is true.\\
+			Prove $P(k+1): a^{k+1} \equiv c^{k+1} (\bmod\; n)$:\\
+			$a^{k+1}=a \cdot a^k$\\
+			$a=c+sn$ because $a \equiv c (\bmod\; n)$.\\
+			$a^k=c^k+tn$ because $P(k)$ is true.\\
+			$\begin{aligned}
+				a^{k+1} &= (c+sn)(c^k+tn)\\
+				&= c^{k+1}+ctn+snc^k+stn^2\\
+				&= c^{k+1}+n(\underbrace{ct+sc^k+stn}_{k})\\
+			\end{aligned}$\\
+			$k \in \mathbb{Z}$ and $a^{k+1}=c^{k+1}+kn$\\
+			$a^{k+1} \equiv c^{k+1} (\bmod\; n)$\\
+			Basis and inductive hypothesis proven, therefore original statement is true. \\
+		}
+	}
+\end{document}
